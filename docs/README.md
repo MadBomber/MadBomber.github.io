@@ -1,2 +1,3 @@
-# Is README.md the index?
-might be.
+# Play Ground for GitHub Pages
+
+This is just me playing around.
