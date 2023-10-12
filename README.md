@@ -4,6 +4,8 @@ Contact: [eMail](mailto:dvanhoozer@duck.com) | [LinkedIn](https://linkedin.com/i
 
 Dewayne VanHoozer is a Senior Ruby on Rails Software Engineer and Technical Manager with expertise in building **mission-critical, test-driven applications**. He has a strong background in back-end Ruby on Rails business processes, API integrations, data modeling, database optimization, and software refactoring. Dewayne has a proven track record of stabilizing and improving the performance of applications, as well as enhancing their maintainable feature sets. He is proficient in version control systems such as Git and requirements management tools like Jira. **Dewayne is also an active contributor to open source projects and has released his own Ruby gems.**
 
+[Recommendations from peers, direct reports and supervisors are available.](recommendations.md)
+
 ## Education
 
 Dewayne holds a Baccalaureate degree with majors in Mathematics, Chemistry, Physics, and Computer Science from Cameron University in Lawton, OK.
