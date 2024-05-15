@@ -4,6 +4,8 @@ Visionary leader with extensive technical expertise and a proven track record in
 
 Contact: [Email](mailto:dvanhoozer@duck.com) | [LinkedIn](https://linkedin.com/in/dewayne-vanhoozer) | [Github](https://github.com/MadBomber) | [X](https://x.com/madbomber0)
 
+Recommendations are available on  [LinkedIn](https://linkedin.com/in/dewayne-vanhoozer) and [here.](./recommendations.md)
+
 ## Summary
 
 Accomplished Senior Software Engineer and Technical Manager with a robust background in developing mission-critical, test-driven applications. Proficient in Ruby, API development, data modeling, performance optimization, and artificial intelligence. Experienced in leading technical teams, enhancing application stability and performance, and mentoring developers. Passionate about open-source contributions and innovative software solutions.
