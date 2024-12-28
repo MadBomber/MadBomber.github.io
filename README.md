@@ -12,6 +12,8 @@ Recommendations are available on  [LinkedIn](https://linkedin.com/in/dewayne-van
 
 ## Publications
 
+New articles are [published on my blog.](https://madbomber.github.io/blog)
+
 - 2023-07 [Warping Mines with gen-AI](https://medium.com/p/b8e611870365)
 - 2023-08 [Parameterized AI Prompts](https://medium.com/p/19bbc59b3e2e)
 - 2023-09 [Rate Limited APIs](https://medium.com/@dvanhoozer/rate-limited-apis-dd9cbe6bfa50)
