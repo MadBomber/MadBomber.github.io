@@ -6,6 +6,8 @@ Contact: [Email](mailto:dvanhoozer@duck.com) | [LinkedIn](https://linkedin.com/i
 
 Recommendations are available on  [LinkedIn](https://linkedin.com/in/dewayne-vanhoozer) and [here.](./recommendations.md)
 
+[DeepDive Podcast](./stuff/deepdive_podcast_dewayne_vanhoozer.wav)
+
 ## Presentations
 
 - [RubyConf 2011 The Secret Life of Ruby: Warrior With A Cause]()
@@ -13,16 +15,6 @@ Recommendations are available on  [LinkedIn](https://linkedin.com/in/dewayne-van
 ## Publications
 
 New articles are [published on my blog.](https://madbomber.github.io/blog)
-
-- 2023-07 [Warping Mines with gen-AI](https://medium.com/p/b8e611870365)
-- 2023-08 [Parameterized AI Prompts](https://medium.com/p/19bbc59b3e2e)
-- 2023-09 [Rate Limited APIs](https://medium.com/@dvanhoozer/rate-limited-apis-dd9cbe6bfa50)
-- 2023-10 [TODO or not TODO - Harnessing Generative AI for Software Engineer’s First Draft](https://medium.com/@dvanhoozer/todo-or-not-todo-1a1301d4af6c)
-- 2023-11 [Gen-AI Prompt Management with Ruby](https://medium.com/@dvanhoozer/gen-ai-prompt-management-with-ruby-a4dd2e5bc007)
-- 2024-01 [AIA and Pre-compositional AI Prompts](https://medium.com/@dvanhoozer/aia-and-pre-compositional-ai-prompts-7c3ebf0538dc)
-
-
-
 
 ## Summary
 
