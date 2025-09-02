@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 180" width="450" height="180">
+  <!-- Background -->
+  <rect width="450" height="180" fill="#1a1a1a" rx="10"/>
+  
+  <!-- Bomb graphic on the left -->
+  <g transform="translate(70, 75)">
+    <!-- Fuse -->
+    <path d="M 22 -37 Q 30 -45, 37 -42" stroke="#8B4513" stroke-width="3" fill="none"/>
+    <!-- Larger Spark/Flame -->
+    <g transform="translate(37, -42)">
+      <path d="M 0 0 L 6 -6 L 2 -8 L 8 -12 L 4 -14 L 10 -18 L 6 -20 L 12 -24" stroke="#FF6B35" stroke-width="2" fill="none"/>
+      <!-- Main flame -->
+      <circle cx="12" cy="-24" r="8" fill="#FFA500">
+        <animate attributeName="r" values="8;11;8" dur="0.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.7;1" dur="0.4s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Inner flame -->
+      <circle cx="12" cy="-24" r="5" fill="#FF4500">
+        <animate attributeName="r" values="5;7;5" dur="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.8;0.5;0.8" dur="0.3s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Core flame -->
+      <circle cx="12" cy="-24" r="3" fill="#FFFF00">
+        <animate attributeName="r" values="3;4.5;3" dur="0.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.8;1" dur="0.2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <!-- Bomb body -->
+    <circle cx="0" cy="0" r="38" fill="#2a2a2a"/>
+    <circle cx="0" cy="0" r="35" fill="#3a3a3a"/>
+    <!-- Highlight -->
+    <ellipse cx="-8" cy="-12" rx="12" ry="15" fill="#555" opacity="0.6"/>
+  </g>
+  
+  <!-- Text on the right -->
+  <g transform="translate(140, 75)">
+    <!-- MadBomber -->
+    <text x="0" y="5" font-family="Arial Black, sans-serif" font-size="36" font-weight="900" text-anchor="start" fill="#FF6B35">
+      MadBomber
+    </text>
+    <!-- Software -->
+    <text x="0" y="35" font-family="Arial, sans-serif" font-size="20" text-anchor="start" fill="#888">
+      SOFTWARE
+    </text>
+  </g>
+  
+  <!-- Floating Geometric Elements -->
+  <g opacity="0.4">
+    <!-- Floating circles -->
+    <circle cx="380" cy="50" r="2" fill="#666">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 15,8; 0,0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.8;0.4" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="160" cy="120" r="1.5" fill="#777">
+      <animateTransform attributeName="transform" type="translate" values="0,0; -10,12; 0,0" dur="3.2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.7;0.3" dur="3.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="130" r="1" fill="#555">
+      <animateTransform attributeName="transform" type="translate" values="0,0; 8,-15; 0,0" dur="3.8s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;0.9;0.5" dur="3.8s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Enhanced Sparks and Particles -->
+  <g transform="translate(119, 9)">
+    <!-- Multiple spark trails from larger flame -->
+    <g opacity="0.8">
+      <circle cx="2" cy="-2" r="1.5" fill="#FF6B35">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 15,-25; 30,-45" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.8;0" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.5;3.5;0" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="4" cy="-1" r="2" fill="#FFA500">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 12,-20; 25,-38" dur="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.6;0" dur="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="2;4;0" dur="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1" cy="-3" r="1.2" fill="#FF4500">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 18,-30; 35,-50" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.9;0" dur="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.2;3;0" dur="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="-1" cy="-2" r="1.8" fill="#FFFF00">
+        <animateTransform attributeName="transform" type="translate" values="0,0; 14,-18; 28,-35" dur="1.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.7;0" dur="1.4s" repeatCount="indefinite"/>
+        <animate attributeName="r" values="1.8;4.2;0" dur="1.4s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Bomb Glow Effect -->
+  <g transform="translate(70, 75)">
+    <circle cx="0" cy="0" r="42" fill="none" stroke="#FF6B35" stroke-width="1" opacity="0.3">
+      <animate attributeName="r" values="42;46;42" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.3;0.1;0.3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Static Tagline -->
+  <text x="225" y="145" font-family="Arial, sans-serif" font-size="14" font-style="italic" text-anchor="middle" fill="#FFA500">
+    Explosive Solutions, Stable Results
+  </text>
+  
+  <!-- Border accent -->
+  <rect x="5" y="5" width="440" height="170" fill="none" stroke="#FF6B35" stroke-width="1" rx="8" opacity="0.3"/>
+</svg>

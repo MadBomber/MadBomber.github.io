@@ -1,0 +1,9 @@
+main:
+  - title: "Projects"
+    url: /projects/
+  - title: "About"
+    url: /about/
+  - title: "Blog"
+    url: https://madbomber.github.io/blog/
+  - title: "Contact"
+    url: /contact/

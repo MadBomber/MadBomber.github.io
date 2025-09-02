@@ -1,71 +1,63 @@
-# Dewayne VanHoozer
+# Dewayne VanHoozer - Personal Website
 
-Visionary leader with extensive technical expertise and a proven track record in steering complex projects to success. Renowned for strategic problem-solving, innovative technology application, and commitment to team development.
+<div align="center">
+  <img src="assets/images/madbomber_logo_animated.svg" alt="MadBomber Logo" width="450" height="180">
+</div>
 
-Contact: [Email](mailto:dvanhoozer@duck.com) | [LinkedIn](https://linkedin.com/in/dewayne-vanhoozer) | [Github](https://github.com/MadBomber) | [X](https://x.com/madbomber0)
+This repository contains the source code for my professional website at [madbomber.github.io](https://madbomber.github.io).
 
-Recommendations are available on  [LinkedIn](https://linkedin.com/in/dewayne-vanhoozer) and [here.](./recommendations.md)
+## Site Structure
 
-[DeepDive Podcast](./stuff/deepdive_podcast_dewayne_vanhoozer.wav)
+This Jekyll site is built using the Minimal Mistakes theme and includes:
 
-## Presentations
+- **Professional Portfolio**: Showcasing Ruby on Rails expertise and technical leadership
+- **Publications & Media**: Articles, blog posts, and conference presentations
+- **Open Source Projects**: Ruby gems and AI development tools
+- **Professional Recommendations**: Testimonials from colleagues and clients
+- **Contact Information**: Professional networking and consulting inquiries
 
-- [RubyConf 2011 The Secret Life of Ruby: Warrior With A Cause]()
+## Technologies Used
 
-## Publications
+- **Jekyll**: Static site generator
+- **Minimal Mistakes Theme**: Professional, responsive design
+- **GitHub Pages**: Hosting and deployment
+- **Markdown**: Content creation
+- **YAML**: Configuration and data management
 
-New articles are [published on my blog.](https://madbomber.github.io/blog)
+## Local Development
 
-## Summary
+To run this site locally:
 
-Accomplished Senior Software Engineer and Technical Manager with a robust background in developing mission-critical, test-driven applications. Proficient in Ruby, API development, data modeling, performance optimization, and artificial intelligence. Experienced in leading technical teams, enhancing application stability and performance, and mentoring developers. Passionate about open-source contributions and innovative software solutions.
+```bash
+gem install bundler jekyll
+bundle install
+bundle exec jekyll serve
+```
 
-## Professional Accomplishments
+The site will be available at `http://localhost:4000`.
 
-### Leadership and Team Management
+## Content Areas
 
-- Integrated multi-contractor teams to improve project delivery timelines and team effectiveness.
-- Achieved top-tier performance ratings in roles with high technical and leadership demands.
-- Successfully led an applied research lab for a major defense contract for almost 6 years.
-- Secured hundreds of millions in federal contracts as a key proposal team member and technical lead.
-- Sole contributor in winning tens of millions in federal sole-source contracts.
+### Professional Focus
+- Ruby on Rails development (18+ years)
+- Technical leadership and team management
+- AI/ML integration and prompt engineering
+- Performance optimization and system scaling
+- Healthcare technology and government contracts
 
-### Significant Project Contributions
+### Open Source Contributions
+- [prompt_manager](https://github.com/MadBomber/prompt_manager): AI prompt management
+- [aia](https://github.com/MadBomber/aia): Command-line AI assistant
+- [debug_me](https://github.com/MadBomber/debug_me): Ruby debugging utilities
+- Multiple additional Ruby gems and tools
 
-- Designated Ruby as the rapid prototyping language for an applied research lab.
-- Presented a talk at an International Ruby Conference on the success of Ruby as a rapid prototyping language in a major applied research lab.
-- Led Ruby on Rails projects for high-profile government contracts.
-- Developed and presented innovative technology prototypes at national conferences.
+### Contact
 
-### Performance and Optimization
+- **Email**: [dvanhoozer@duck.com](mailto:dvanhoozer@duck.com)
+- **LinkedIn**: [linkedin.com/in/dewayne-vanhoozer](https://linkedin.com/in/dewayne-vanhoozer)
+- **GitHub**: [github.com/MadBomber](https://github.com/MadBomber)
+- **Blog**: [madbomber.github.io/blog](https://madbomber.github.io/blog)
 
-- Enhanced performance and stability of a Ruby on Rails application for a mental healthcare client.
-- Optimized API responses and database queries, significantly reducing system latency.
-- Improved features, stability, and performance of a SaaS-based EMR/EHR system.
-- Addressed critical time zone handling and data integrity issues, boosting system reliability.
+## License
 
-### Innovation in Technology Solutions
-
-- Implemented AI-driven solutions for standardized image processing.
-- Optimized content publication processes using Ruby, reducing time-to-market.
-- Developed a web platform for external content submission, managing technology migration to standard publishing tools.
-
-## Education
-
-**Bachelor's Degrees in Mathematics, Chemistry, Physics, and Computer Science**  
-Cameron University, Lawton, OK
-
-## Skills
-
-- **Languages & Technologies**: Ruby, Rails, Python, JavaScript, NodeJS, AI, SQL, PostgreSQL, MySQL
-- **Tools**: Git, Docker, Jira, RSpec, Sidekiq, Redis
-- **Methodologies**: TDD, Agile, Scrum, Kanban, SOLID, SAFe
-
-## Current Personal Projects
-
-- **Open Source**: Released multiple Ruby gems, actively contributing to the open-source community.
-- **Generative AI (genAI)**: Developed `prompt_manager` and `aia`, tools integrating Ruby with generative AI technologies.
-- **Publications**: Authored articles exploring AI applications in software development.
-
-## Professional Affiliations
-- **Employers, Clients, and Mission-Critical Projects**: 42six, ARAMCO, AFATDS, ASAS, Cameron Iron Works, CSC, DataMost, DARPA, EHR, EMR, GeoLogics, Innova Solutions, ISS, JISR, KIPU Health, Lifestance Health, LMMFC, M.D. Anderson Hospital, MEADS, NASA, NGA, Oddball, Raytheon, SAIC, SSTF, TacFire, TELOS Federal Systems, TEBO, United Methodist Church Upper Room Publications, University of Oklahoma Health Science Center, University of Texas Health and Education Research Center, USAF, US Army, VA, USMC, VRSIL
+Content is copyright Dewayne VanHoozer. Site code is MIT licensed.
