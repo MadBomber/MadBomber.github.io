@@ -35,6 +35,8 @@ feature_row:
     btn_label: "Browse GitHub"
 ---
 
+<script defer src="https://census.derails.dev/k.js" data-website-id="4ab7da56-60ff-41e1-9f7f-87fc2c318001"></script>
+
 <div align="center" style="margin: 2rem 0;">
   <img src="{{ '/assets/images/madbomber_logo_animated.svg' | relative_url }}" alt="MadBomber Logo" width="450" height="180">
 </div>
