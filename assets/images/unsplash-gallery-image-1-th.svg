@@ -1,0 +1,72 @@
+<svg width="500" height="300" xmlns="http://www.w3.org/2000/svg">
+  <!-- AI Development Tools Theme -->
+  <defs>
+    <linearGradient id="aiGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="aiGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f97316;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Neural Network Nodes -->
+  <g opacity="0.8">
+    <!-- Input Layer -->
+    <circle cx="80" cy="80" r="12" fill="url(#aiGrad1)"/>
+    <circle cx="80" cy="150" r="12" fill="url(#aiGrad1)"/>
+    <circle cx="80" cy="220" r="12" fill="url(#aiGrad1)"/>
+
+    <!-- Hidden Layer 1 -->
+    <circle cx="200" cy="60" r="12" fill="url(#aiGrad2)"/>
+    <circle cx="200" cy="120" r="12" fill="url(#aiGrad2)"/>
+    <circle cx="200" cy="180" r="12" fill="url(#aiGrad2)"/>
+    <circle cx="200" cy="240" r="12" fill="url(#aiGrad2)"/>
+
+    <!-- Hidden Layer 2 -->
+    <circle cx="320" cy="80" r="12" fill="url(#aiGrad1)"/>
+    <circle cx="320" cy="150" r="12" fill="url(#aiGrad1)"/>
+    <circle cx="320" cy="220" r="12" fill="url(#aiGrad1)"/>
+
+    <!-- Output Layer -->
+    <circle cx="420" cy="120" r="14" fill="url(#aiGrad2)"/>
+    <circle cx="420" cy="180" r="14" fill="url(#aiGrad2)"/>
+  </g>
+
+  <!-- Connection Lines -->
+  <g stroke="#6366f1" stroke-width="1.5" opacity="0.3">
+    <line x1="80" y1="80" x2="200" y2="60"/>
+    <line x1="80" y1="80" x2="200" y2="120"/>
+    <line x1="80" y1="80" x2="200" y2="180"/>
+    <line x1="80" y1="150" x2="200" y2="120"/>
+    <line x1="80" y1="150" x2="200" y2="180"/>
+    <line x1="80" y1="220" x2="200" y2="180"/>
+    <line x1="80" y1="220" x2="200" y2="240"/>
+
+    <line x1="200" y1="60" x2="320" y2="80"/>
+    <line x1="200" y1="120" x2="320" y2="80"/>
+    <line x1="200" y1="120" x2="320" y2="150"/>
+    <line x1="200" y1="180" x2="320" y2="150"/>
+    <line x1="200" y1="180" x2="320" y2="220"/>
+    <line x1="200" y1="240" x2="320" y2="220"/>
+
+    <line x1="320" y1="80" x2="420" y2="120"/>
+    <line x1="320" y1="150" x2="420" y2="120"/>
+    <line x1="320" y1="150" x2="420" y2="180"/>
+    <line x1="320" y1="220" x2="420" y2="180"/>
+  </g>
+
+  <!-- Brain Icon -->
+  <g transform="translate(380, 30)">
+    <path d="M 50 25 Q 45 15, 35 15 Q 25 15, 20 25 Q 15 35, 20 45 Q 18 55, 25 60 Q 30 65, 40 65 L 60 65 Q 70 65, 75 60 Q 82 55, 80 45 Q 85 35, 80 25 Q 75 15, 65 15 Q 55 15, 50 25"
+          fill="none" stroke="url(#aiGrad2)" stroke-width="3" opacity="0.7"/>
+    <path d="M 50 25 Q 50 40, 40 50" fill="none" stroke="url(#aiGrad2)" stroke-width="2" opacity="0.5"/>
+    <path d="M 50 25 Q 50 40, 60 50" fill="none" stroke="url(#aiGrad2)" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Code Brackets -->
+  <g transform="translate(20, 250)" opacity="0.6">
+    <text font-family="monospace" font-size="24" fill="#8b5cf6" font-weight="bold">&lt;AI/&gt;</text>
+  </g>
+</svg>

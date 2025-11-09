@@ -12,21 +12,21 @@ excerpt: >
   Explosive Solutions, Stable Results<br />
   <small>Open Source Ruby Tools for Modern Development</small>
 feature_row:
-  - image_path: /assets/images/unsplash-gallery-image-1-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-1-th.svg
     alt: "AI Development Tools"
     title: "AI Development Tools"
     excerpt: "Cutting-edge Ruby gems for AI integration including prompt_manager and aia - bringing generative AI to Ruby developers."
     url: "/projects/"
     btn_class: "btn--primary"
     btn_label: "Explore Projects"
-  - image_path: /assets/images/unsplash-gallery-image-2-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-2-th.svg
     alt: "Ruby Libraries"
     title: "Ruby Libraries & Gems"
     excerpt: "Production-ready Ruby gems for debugging, environment management, CLI tools, and more."
     url: "https://rubygems.org/profiles/MadBomber"
     btn_class: "btn--primary"
     btn_label: "View on RubyGems"
-  - image_path: /assets/images/unsplash-gallery-image-3-th.jpg
+  - image_path: /assets/images/unsplash-gallery-image-3-th.svg
     alt: "Developer Tools"
     title: "Developer Tools"
     excerpt: "Professional-grade tools built from 18+ years of Ruby development experience in mission-critical systems."

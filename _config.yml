@@ -9,7 +9,7 @@ baseurl: ""
 logo: "/assets/images/madbomber_logo_animated.svg"
 
 # Theme
-remote_theme: "mmistakes/minimal-mistakes@4.24.0"
+theme: minimal-mistakes-jekyll
 minimal_mistakes_skin: "default"
 
 # Site Author
