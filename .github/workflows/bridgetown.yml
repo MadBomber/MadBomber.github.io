@@ -30,6 +30,9 @@ jobs:
       - name: Install Node dependencies
         run: npm install
 
+      - name: Build frontend assets
+        run: npm run esbuild
+
       - name: Build site
         run: bin/bridgetown build --url "${{ steps.pages.outputs.origin }}"
         env:
