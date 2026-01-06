@@ -1,0 +1,49 @@
+# Site settings
+# These are used to personalize your site. Access them via site.metadata.title, etc.
+
+title: MadBomber Software
+tagline: Explosive Solutions, Stable Results
+email: bigdawg@madbombersoftware.com
+description: >-
+  Open Source Ruby Tools for Modern Development - Explosive Solutions, Stable Results
+
+# Author information
+author:
+  name: Dewayne VanHoozer
+  bio: Senior Software Engineer & Technical Manager specializing in Ruby, Rails, and AI-driven solutions.
+  location: Remote
+  email: bigdawg@madbombersoftware.com
+  avatar: /images/bio-photo.jpg
+  links:
+    - label: LinkedIn
+      icon: fab fa-fw fa-linkedin
+      url: https://linkedin.com/in/dewayne-vanhoozer
+    - label: GitHub
+      icon: fab fa-fw fa-github
+      url: https://github.com/MadBomber
+    - label: X.com
+      icon: fab fa-fw fa-twitter-square
+      url: https://x.com/madbomber0
+
+# Social/Footer links
+social_links:
+  - label: LinkedIn
+    icon: fab fa-fw fa-linkedin
+    url: https://linkedin.com/in/dewayne-vanhoozer
+  - label: GitHub
+    icon: fab fa-fw fa-github
+    url: https://github.com/MadBomber
+  - label: X.com
+    icon: fab fa-fw fa-twitter-square
+    url: https://x.com/madbomber0
+
+# Navigation
+navigation:
+  - title: Projects
+    url: /projects/
+  - title: About
+    url: /about/
+  - title: Blog
+    url: https://madbomber.github.io/blog/
+  - title: Contact
+    url: /contact/

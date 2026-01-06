@@ -1,0 +1,9 @@
+Awarded Baccalaureate Degree in Mathematics with additional majors in Computer Science, Chemistry and Physics.
+
+I am a highly skilled software engineer and technical manager.  My primary focus this last decade has been the healthcare industry's problems with electronic medical records (EMR/EHR) and data integration using Ruby on Rails applications deployed to the cloud (AWS/ECS) based on comprehensive data models in PostgreSQL (RDBMS)
+
+Recently I've been attending seminars and experimenting with generative AI application integrations such as OpenAI's ChatGPT API.  It looks very promising.  I've published articles on the subject which show its favorable applications in assisting in software development activities.
+
+In my spare time I'm guiding a new startup as it sets up its software engineering architecture.  I also run a software consultancy for open source projects.
+
+I am always on the lookout for new ways to apply software and systems technology in the development of complex mission critical solutions.

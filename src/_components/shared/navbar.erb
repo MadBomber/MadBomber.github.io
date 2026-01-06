@@ -1,0 +1,16 @@
+<header class="site-header">
+  <div class="header-content">
+    <a href="<%= relative_url '/' %>" class="site-logo">
+      <span class="logo-emoji">💣</span>
+      <span class="site-title"><%= metadata.title %></span>
+    </a>
+  </div>
+</header>
+
+<nav class="site-nav">
+  <ul>
+    <% metadata.navigation.each do |item| %>
+      <li><a href="<%= item.url.start_with?('http') ? item.url : relative_url(item.url) %>"><%= item.title %></a></li>
+    <% end %>
+  </ul>
+</nav>

@@ -1,47 +1,190 @@
-# Dewayne VanHoozer
+# Dewayne VanHoozer - Personal Website
 
-Contact: [eMail](mailto:dvanhoozer@duck.com) | [LinkedIn](https://linkedin.com/in/dewayne-vanhoozer) | [Github](https://github.com/MadBomber) | [X](https://x.com/madbomber0)
+<div align="center">
+  <img src="src/images/madbomber_logo_animated.svg" alt="MadBomber Logo" width="450" height="180">
+</div>
 
-Dewayne VanHoozer is a Senior Ruby on Rails Software Engineer and Technical Manager with expertise in building **mission-critical, test-driven applications**. He has a strong background in back-end Ruby on Rails business processes, API integrations, data modeling, database optimization, and software refactoring. Dewayne has a proven track record of stabilizing and improving the performance of applications, as well as enhancing their maintainable feature sets. He is proficient in version control systems such as Git and requirements management tools like Jira. **Dewayne is also an active contributor to open source projects and has released his own Ruby gems.**
+This repository contains the source code for my professional website at [madbomber.github.io](https://madbomber.github.io).
 
-## Education
+## Technologies Used
 
-Dewayne holds a Baccalaureate degree with majors in Mathematics, Chemistry, Physics, and Computer Science from Cameron University in Lawton, OK.
+- **Bridgetown 2.1.0**: Modern Ruby static site generator
+- **ERB Templates**: Component-based templating
+- **esbuild**: Fast JavaScript/CSS bundling
+- **GitHub Pages**: Hosting and deployment
+- **GitHub Actions**: Automated build and deploy
 
-## Professional Experience Summary
+## Project Structure
 
-### Innova Solutions
+```
+.
+├── config/                 # Configuration files
+│   └── initializers.rb     # Site settings (URL, timezone, etc.)
+├── frontend/               # Frontend assets
+│   ├── javascript/         # JS entry points
+│   └── styles/             # CSS files
+├── plugins/                # Custom Ruby plugins
+├── scripts/                # Utility scripts
+│   └── find_mkdocs_repos.rb  # Sync projects from GitHub
+├── src/                    # Source content
+│   ├── _components/        # Reusable ERB components
+│   │   └── shared/         # Shared components (navbar, etc.)
+│   ├── _data/              # Data files (YAML)
+│   │   ├── site_metadata.yml
+│   │   └── projects.yml    # Auto-generated project data
+│   ├── _layouts/           # Page layouts
+│   ├── _partials/          # Partial templates
+│   ├── _posts/             # Blog posts
+│   └── images/             # Static images
+├── output/                 # Built site (gitignored)
+├── Gemfile                 # Ruby dependencies
+└── package.json            # Node dependencies
+```
 
-In his recent professional experience, Dewayne worked as a **Consulting Software Engineer** at Innova Solutions, where he supported the back-end team in improving the stability and performance of a mental healthcare client's Ruby on Rails application. He optimized the back-end API and reduced latency in critical database queries. Dewayne also implemented automated processes to ensure consistency in commits and pull requests and standardized clinicians' profile pictures using AI-based image analysis/manipulation libraries in Python. Additionally, he mentored software developers on software engineering SOLID principles and advanced Ruby techniques.
+## Local Development
 
-### KIPU Health Systems
+### Prerequisites
 
-As a **Senior Ruby on Rails Software Engineer** at KIPU Health Systems, Dewayne enhanced the stability, performance, and features of an enterprise-level electronic medical records system. He resolved systemic time zone issues, unreliable data, and faulty business logic, and optimized the custom reporting sub-system to improve performance and stability. Dewayne also provided mentoring on SOLID software engineering principles and advanced Ruby concepts.
+- Ruby 3.2+ (tested with Ruby 4.0.0)
+- Node.js 18+
+- Bundler
 
-### US Department of Veterans Affairs (VA) Federal Contract
+### Setup
 
-#### VetsEZ and GDIT as Prime Contractors
+```bash
+# Install Ruby dependencies
+bundle install
 
-During his tenure as an **Architect/Technical Manager** for a research contract with the US Department of Veterans Affairs (VA), Dewayne improved software development effectiveness by integrating sub-contractors into the planning and review process. He increased cohesion and productivity of software engineering teams through mentoring and training sessions, and developed leadership skills in developers by rotating team leadership responsibilities. Dewayne received a "top-tier" performance rating from the VA for his excellence.
+# Install Node dependencies
+npm install
+```
 
-### General Dynamics Information Technology (GDIT)
+### Development Server
 
-Originally hired by 42six which was bought by CSC which split into CSgov/CSpub and CSgov merged with SRA to become CSRA which was bought by GDIT ... all while Dewayne was sitting at the same desk in the same office.
+```bash
+bin/bridgetown start
+```
 
-As a **Software Engineering Advisor** at General Dynamics Information Technology, Dewayne served as the **technical lead** on Ruby on Rails and NodeJS projects in support of new business development and mergers and acquisitions (M&A). His teams created prototypes for the US **Department of Labor (DOL)** and the **National Geospatial-Intelligence Agency (NGA)**. The DOL prototype involved Oracle RDBMS and a complex compensation claims workflow process, while the NGA prototype involved the application of AI techniques in image categorization and subject element identification with a geographic map interface.
+The site will be available at `http://localhost:4000` with live reload enabled.
 
-### United Methodist Church, Upper Room Publications
+### Build for Production
 
-In his role as **Technical Manager of Software Development** at United Methodist Church, Upper Room Publications, Dewayne reduced time to publication using Ruby-based workflow projects. He also created a website for external author article submissions and repurposed existing audio content for telephone-based delivery using Ruby. Dewayne standardized the publishing toolset around WoodWing and Adobe products.
+```bash
+bin/bridgetown build
+```
 
-### Lockheed Martin Missiles and Fire Control
+Output is written to the `output/` directory.
 
-At Lockheed Martin Missiles and Fire Control, Dewayne served as a **Sr. Staff System Engineer and Technical Manager**. He was responsible for managing the Virtual Reality System Integration Lab (VRSIL), where he implemented Ruby as the principle prototyping language. The VRSIL was credited with securing substantial new business as a result of classified prototype demonstrations. Dewayne also worked on the Medium Extend Air Defense System (MEADS) program, where he restored customer confidence in the program's **Cost Account Management (CAM)** and **Group Leader** for the algorithms and threat assessment groups.
+### Other Commands
 
-## Recap
+```bash
+# Run tests
+bundle exec rake
 
-Throughout his career, Dewayne has worked with various companies and organizations, including SAIC, Raytheon, GeoLogics, Telos, DataMost, Cameron Iron Works, ARAMCO, TRANScon Truck Lines, University of Texas Educational Health Science Research Center, and University of Oklahoma Health Sciences Center. He has developed classified mission-critical applications on federal contracts for organizations such as HASA, DARPA, USAF, US Army, USFK, USMC, National Geospatial-Intelligence Agency (NGA), CECOM, CENTCOM, SOCOM, NOCOM, and more.
+# Build frontend assets only
+bin/bridgetown frontend:build
 
-Dewayne possesses a wide range of technical skills and expertise, with a focus on Ruby and related tools, gems (libraries), and paradigms. He is also experienced in various other technologies and frameworks, such as The Rails collection of Libraries, SInatra, RSpec, Minitest, Sidekiq, Redis, and more. Dewayne has proficiency in database systems like PostgreSQL and MySQL, and he is skilled in using development tools like Git, Docker, Jira, and more.
+# Clean build artifacts
+bin/bridgetown clean
+```
 
-**In summary, Dewayne VanHoozer is a highly experienced Ruby on Rails Software Engineer and Technical Manager with a strong track record of success in building and enhancing mission-critical applications. His expertise spans a wide range of technical skills and industries, making him a valuable asset to any organization.**
+## Configuration
+
+### Site Metadata
+
+Edit `src/_data/site_metadata.yml` to update:
+- Site title and tagline
+- Author information
+- Navigation links
+- Social media links
+
+### Site Settings
+
+Edit `config/initializers.rb` to configure:
+- Site URL
+- Timezone
+- Template engine
+- Plugins
+
+## Adding Content
+
+### Pages
+
+Create `.md` or `.erb` files in `src/`:
+
+```markdown
+---
+layout: page
+title: My Page
+---
+
+Page content here...
+```
+
+### Blog Posts
+
+Create files in `src/_posts/` with the naming convention:
+
+```
+YYYY-MM-DD-title-slug.md
+```
+
+### Components
+
+Create reusable components in `src/_components/`:
+
+1. Ruby class: `src/_components/shared/my_component.rb`
+2. ERB template: `src/_components/shared/my_component.erb`
+
+## Updating Projects from GitHub
+
+The Projects page is dynamically generated from data synced from GitHub repositories. The script scans all non-forked MadBomber repos that contain a `mkdocs.yml` file (indicating documented projects).
+
+### Sync Project Data
+
+```bash
+ruby scripts/find_mkdocs_repos.rb
+```
+
+This script:
+1. Fetches all non-forked repos from github.com/MadBomber
+2. Filters for repos containing `mkdocs.yml`
+3. Extracts project metadata (name, description, stars, language)
+4. Writes to `src/_data/projects.yml`
+
+The Projects page (`src/projects.erb`) automatically renders cards for all projects in this data file, sorted by star count.
+
+### Requirements
+
+- GitHub CLI (`gh`) must be installed and authenticated
+- Run periodically to keep project data fresh
+
+## Deployment
+
+The site automatically deploys to GitHub Pages when changes are pushed to `main` via GitHub Actions (`.github/workflows/bridgetown.yml`).
+
+## Content Areas
+
+### Professional Focus
+- Ruby on Rails development (18+ years)
+- Technical leadership and team management
+- AI/ML integration and prompt engineering
+- Performance optimization and system scaling
+- Healthcare technology and government contracts
+
+### Open Source Contributions
+- [prompt_manager](https://github.com/MadBomber/prompt_manager): AI prompt management
+- [aia](https://github.com/MadBomber/aia): Command-line AI assistant
+- [debug_me](https://github.com/MadBomber/debug_me): Ruby debugging utilities
+- Multiple additional Ruby gems and tools
+
+### Contact
+
+- **Email**: [dvanhoozer@duck.com](mailto:dvanhoozer@duck.com)
+- **LinkedIn**: [linkedin.com/in/dewayne-vanhoozer](https://linkedin.com/in/dewayne-vanhoozer)
+- **GitHub**: [github.com/MadBomber](https://github.com/MadBomber)
+- **Blog**: [madbomber.github.io/blog](https://madbomber.github.io/blog)
+
+## License
+
+Content is copyright Dewayne VanHoozer. Site code is MIT licensed.

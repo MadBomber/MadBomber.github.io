@@ -1,0 +1,12 @@
+<footer class="site-footer">
+  <div class="footer-content">
+    <p>&copy; <%= Time.now.year %> <%= metadata.title %>. All rights reserved.</p>
+    <div class="footer-links">
+      <% metadata.social_links.each do |link| %>
+        <a href="<%= link.url %>" target="_blank" rel="noopener"><%= link.label %></a>
+      <% end %>
+    </div>
+    <p class="footer-tagline"><%= metadata.tagline %></p>
+    <p class="footer-contact">Contact: <a href="mailto:<%= metadata.email %>"><%= metadata.email %></a></p>
+  </div>
+</footer>
