@@ -1,0 +1,23 @@
+---
+layout: blog_default
+title: Posts
+permalink: /blog/posts/
+---
+
+<h1>All Posts</h1>
+
+<%
+  posts_by_year = collections.posts.resources
+    .sort_by { |p| p.date }
+    .reverse
+    .group_by { |p| p.date.year }
+%>
+
+<% posts_by_year.each do |year, posts| %>
+  <div class="archive-section">
+    <h2><%= year %></h2>
+    <% posts.each do |post| %>
+      <%= render Blog::PostCard.new(post: post) %>
+    <% end %>
+  </div>
+<% end %>

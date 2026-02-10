@@ -1,7 +1,7 @@
 <header class="site-header">
   <div class="header-content">
     <a href="<%= relative_url '/' %>" class="site-logo">
-      <span class="logo-emoji">💣</span>
+      <span class="logo-emoji">&#x1F4A3;</span>
       <span class="site-title"><%= metadata.title %></span>
     </a>
   </div>
@@ -10,7 +10,33 @@
 <nav class="site-nav">
   <ul>
     <% metadata.navigation.each do |item| %>
-      <li><a href="<%= item.url.start_with?('http') ? item.url : relative_url(item.url) %>"><%= item.title %></a></li>
+      <li>
+        <% item_path = item.url.chomp('/')
+           res_path = resource&.relative_url&.chomp('/')
+           is_current = res_path && (item_path == "" ? res_path == "" : res_path.start_with?(item_path))
+        %><a href="<%= item.url.start_with?('http') ? item.url : relative_url(item.url) %>"
+           class="<%= 'current' if is_current %>">
+          <%= item.title %>
+        </a>
+      </li>
     <% end %>
+    <li>
+      <a href="#" class="nav-search-toggle" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="8"/>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+        </svg>
+        Search
+      </a>
+    </li>
   </ul>
 </nav>
+
+<div class="nav-search-bar" hidden>
+  <div class="nav-search-inner">
+    <input type="text" class="search-input" placeholder="Search posts..."
+           data-search-url="/blog/search.json" autocomplete="off">
+    <button class="nav-search-close" aria-label="Close search">&times;</button>
+  </div>
+  <div class="search-results"></div>
+</div>

@@ -1,0 +1,120 @@
+---
+layout: blog_default
+title: Blog
+permalink: /blog/
+paginate:
+  collection: posts
+  per_page: 5
+---
+
+<% posts = paginator.resources %>
+<% on_landing = paginator.page == 1 %>
+
+<% if on_landing %>
+  <section class="hero">
+    <h1 class="hero-title">MadBomber's Blog</h1>
+    <p class="hero-tagline">Explore the explosive world of ideas and insights</p>
+    <p class="hero-description">
+      Writing about software engineering, AI-powered development tools, Ruby gems,
+      and building digital ministry platforms. <%= collections.posts.resources.size %> articles and counting.
+    </p>
+    <div class="hero-actions">
+      <a href="/blog/posts/" class="btn">Browse All Posts</a>
+      <a href="/about/" class="btn btn-outline">About Me</a>
+    </div>
+  </section>
+
+  <% featured = posts.first %>
+  <% if featured %>
+    <section class="featured-section">
+      <h2 class="section-heading">Latest</h2>
+      <article class="featured-card">
+        <div class="featured-content">
+          <div class="featured-meta">
+            <time datetime="<%= featured.date.iso8601 %>"><%= featured.date.strftime("%B %d, %Y") %></time>
+            <span class="read-time">~<%= (featured.content.split.size / 200.0).ceil %> min read</span>
+            <% featured.data.categories&.each do |cat| %>
+              <span class="category"><%= cat %></span>
+            <% end %>
+          </div>
+          <h3><a href="<%= featured.relative_url %>"><%= featured.data.title %></a></h3>
+          <% text = featured.content.gsub(/<[^>]+>/, '').gsub(/\s+/, ' ').strip %>
+          <p class="featured-excerpt"><%= text.length > 280 ? "#{text[0..277]}..." : text %></p>
+          <% if featured.data.tags&.any? %>
+            <div class="post-card-tags">
+              <% featured.data.tags.first(4).each do |tag| %>
+                <% slug = tag.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "") %>
+                <a href="/blog/tags/<%= slug %>/" class="tag"><%= tag %></a>
+              <% end %>
+            </div>
+          <% end %>
+          <a href="<%= featured.relative_url %>" class="featured-read-more">Read article &rarr;</a>
+        </div>
+      </article>
+    </section>
+  <% end %>
+
+  <% remaining = posts.drop(1) %>
+  <% if remaining.any? %>
+    <section class="recent-section">
+      <h2 class="section-heading">Recent</h2>
+      <div class="post-grid">
+        <% remaining.each do |post| %>
+          <%= render Blog::PostCard.new(post: post) %>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+
+  <%
+    eng_posts = collections.posts.resources
+      .select { |p| (p.data.categories || []).include?("Engineering") }
+      .sort_by(&:date).reverse.first(3)
+    min_posts = collections.posts.resources
+      .select { |p| (p.data.categories || []).include?("Ministry Online") }
+      .sort_by(&:date).reverse.first(3)
+    eng_total = collections.posts.resources.count { |p| (p.data.categories || []).include?("Engineering") }
+    min_total = collections.posts.resources.count { |p| (p.data.categories || []).include?("Ministry Online") }
+  %>
+  <section class="categories-section">
+    <h2 class="section-heading">Explore by Category</h2>
+    <div class="category-columns">
+      <div class="category-column">
+        <div class="category-header">
+          <h3>Engineering</h3>
+          <span class="category-count"><%= eng_total %> posts</span>
+        </div>
+        <p class="category-description">AI tools, Ruby gems, software architecture, and development workflows.</p>
+        <% eng_posts.each do |post| %>
+          <a href="<%= post.relative_url %>" class="category-post-link">
+            <span class="category-post-title"><%= post.data.title %></span>
+            <time><%= post.date.strftime("%b %Y") %></time>
+          </a>
+        <% end %>
+        <a href="/blog/categories/engineering/" class="category-view-all">View all Engineering posts &rarr;</a>
+      </div>
+      <div class="category-column">
+        <div class="category-header">
+          <h3>Ministry Online</h3>
+          <span class="category-count"><%= min_total %> posts</span>
+        </div>
+        <p class="category-description">Digital outreach, podcasting, social media strategy, and online worship.</p>
+        <% min_posts.each do |post| %>
+          <a href="<%= post.relative_url %>" class="category-post-link">
+            <span class="category-post-title"><%= post.data.title %></span>
+            <time><%= post.date.strftime("%b %Y") %></time>
+          </a>
+        <% end %>
+        <a href="/blog/categories/ministry-online/" class="category-view-all">View all Ministry posts &rarr;</a>
+      </div>
+    </div>
+  </section>
+
+<% else %>
+  <h1>Posts</h1>
+  <% posts.each do |post| %>
+    <%= render Blog::PostCard.new(post: post) %>
+  <% end %>
+<% end %>
+
+<%= render Blog::Pagination.new(paginator: paginator) %>

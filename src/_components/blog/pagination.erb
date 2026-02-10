@@ -1,0 +1,17 @@
+<% if paginator.total_pages > 1 %>
+  <nav class="pagination">
+    <% if paginator.previous_page %>
+      <a href="<%= paginator.previous_page_path %>" class="btn">&laquo; Newer</a>
+    <% else %>
+      <span class="btn disabled">&laquo; Newer</span>
+    <% end %>
+
+    <span class="page-info">Page <%= paginator.page %> of <%= paginator.total_pages %></span>
+
+    <% if paginator.next_page %>
+      <a href="<%= paginator.next_page_path %>" class="btn">Older &raquo;</a>
+    <% else %>
+      <span class="btn disabled">Older &raquo;</span>
+    <% end %>
+  </nav>
+<% end %>

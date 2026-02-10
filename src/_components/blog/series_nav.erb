@@ -1,0 +1,13 @@
+<nav class="series-nav">
+  <h3>AIA Series</h3>
+  <ul>
+    <% series_data&.each do |item| %>
+      <li>
+        <a href="<%= item['url'] %>"
+           <%= 'class="current"' if current_url&.include?(item['url']) %>>
+          <%= item['title'] %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</nav>

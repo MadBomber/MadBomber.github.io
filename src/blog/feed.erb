@@ -1,0 +1,23 @@
+---
+permalink: /blog/feed.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MadBomber's Blog</title>
+    <description>Explore the explosive world of ideas and insights at MadBomber's Blog</description>
+    <link><%= absolute_url "/blog/" %></link>
+    <atom:link href="<%= absolute_url "/blog/feed.xml" %>" rel="self" type="application/rss+xml"/>
+    <% collections.posts.resources.sort_by { |p| p.date }.reverse.first(20).each do |post| %>
+    <item>
+      <title><%= post.data.title %></title>
+      <pubDate><%= post.date.rfc822 %></pubDate>
+      <link><%= absolute_url post.relative_url %></link>
+      <guid isPermaLink="true"><%= absolute_url post.relative_url %></guid>
+      <% (post.data.categories || []).each do |cat| %>
+      <category><%= cat %></category>
+      <% end %>
+    </item>
+    <% end %>
+  </channel>
+</rss>

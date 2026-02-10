@@ -1,3 +1,6 @@
+@import "./blog.css";
+@import "./syntax-highlighting.css";
+
 :root {
   --body-background: #1a1a1a;
   --body-color: #e0e0e0;
@@ -58,7 +61,7 @@ h3 {
 }
 
 .header-content {
-  max-width: 65rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
@@ -100,7 +103,7 @@ h3 {
   gap: 2rem;
   font-size: 1.1rem;
   font-weight: 500;
-  max-width: 65rem;
+  max-width: 80rem;
 }
 
 .site-nav li {
@@ -121,6 +124,11 @@ h3 {
   text-decoration: none;
 }
 
+.site-nav a.current {
+  color: var(--action-color);
+  font-weight: 700;
+}
+
 /* Main content */
 main {
   margin: 2rem auto 4rem;
@@ -137,7 +145,7 @@ main {
   }
 }
 
-/* Hero section */
+/* Hero section (main site) */
 .hero {
   padding: 3rem 0;
 }
@@ -161,7 +169,7 @@ main {
   border-radius: 6px;
   text-decoration: none;
   font-weight: 500;
-  margin: 0.5rem;
+  margin: 0.25rem;
   transition: background 0.2s, transform 0.1s;
 }
 
@@ -169,6 +177,11 @@ main {
   background: #c03035;
   text-decoration: none;
   transform: translateY(-1px);
+}
+
+.btn.disabled {
+  opacity: 0.4;
+  pointer-events: none;
 }
 
 /* Footer */
@@ -181,7 +194,7 @@ main {
 }
 
 .footer-content {
-  max-width: 65rem;
+  max-width: 80rem;
   margin: 0 auto;
 }
 
@@ -247,6 +260,12 @@ hr {
 /* Strong text */
 strong {
   color: var(--heading-color);
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Projects Page */
@@ -431,6 +450,56 @@ strong {
 
 .projects-footer .refresh-note code {
   font-size: 0.8rem;
+}
+
+/* Blog Preview (homepage) */
+.blog-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.blog-preview-card {
+  background: var(--body-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.25rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.blog-preview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.blog-preview-card h3 {
+  margin: 0.5rem 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.blog-preview-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted-color);
+}
+
+.blog-preview-category {
+  background: rgba(214, 64, 69, 0.15);
+  color: var(--action-color);
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+}
+
+.blog-preview-excerpt {
+  color: var(--body-color);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0.5rem 0 0;
 }
 
 /* Responsive */

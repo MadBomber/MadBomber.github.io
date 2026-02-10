@@ -1,0 +1,12 @@
+<div class="author-profile">
+  <div class="author-avatar">
+    <img src="<%= relative_url author.avatar %>" alt="<%= author.name %>" loading="lazy">
+  </div>
+  <h3 class="author-name"><%= author.name %></h3>
+  <p class="author-bio"><%= author.bio %></p>
+  <div class="author-links">
+    <% author.links.each do |link| %>
+      <a href="<%= link.url %>" target="_blank" rel="noopener"><%= link.label %></a>
+    <% end %>
+  </div>
+</div>

@@ -81,6 +81,29 @@ title: Home
   <a href="/projects/" class="btn">View All <%= site.data.projects.size %> Projects</a>
 </p>
 
+<h2>Latest from the Blog</h2>
+
+<% recent_posts = collections.posts.resources.sort_by(&:date).reverse.first(3) %>
+<div class="blog-preview-grid">
+  <% recent_posts.each do |post| %>
+    <div class="blog-preview-card">
+      <div class="blog-preview-meta">
+        <time datetime="<%= post.date.iso8601 %>"><%= post.date.strftime("%B %d, %Y") %></time>
+        <% (post.data.categories || []).each do |cat| %>
+          <span class="blog-preview-category"><%= cat %></span>
+        <% end %>
+      </div>
+      <h3><a href="<%= post.relative_url %>"><%= post.data.title %></a></h3>
+      <% text = post.content.gsub(/<[^>]+>/, '').gsub(/\s+/, ' ').strip %>
+      <p class="blog-preview-excerpt"><%= text.length > 160 ? "#{text[0..157]}..." : text %></p>
+    </div>
+  <% end %>
+</div>
+
+<p style="text-align: center; margin-top: 1rem;">
+  <a href="/blog/" class="btn">Read the Blog</a>
+</p>
+
 <h2>Get Involved</h2>
 
 <ul>

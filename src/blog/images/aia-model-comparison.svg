@@ -1,0 +1,146 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gpt4Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="claudeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="geminiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#0f172a"/>
+  
+  <!-- Title -->
+  <text x="500" y="40" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#f8fafc" text-anchor="middle">AI Model Strengths & Specializations</text>
+  
+  <!-- GPT-4 Section -->
+  <g id="gpt4-section">
+    <rect x="50" y="80" width="280" height="550" rx="20" fill="url(#gpt4Grad)" stroke="#059669" stroke-width="3"/>
+    
+    <!-- Header -->
+    <rect x="70" y="100" width="240" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="190" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">GPT-4</text>
+    <text x="190" y="150" font-family="Arial, sans-serif" font-size="12" fill="#bbf7d0" text-anchor="middle">Creative & Technical Powerhouse</text>
+    
+    <!-- Strengths -->
+    <text x="80" y="190" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">Core Strengths:</text>
+    <text x="90" y="215" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Strong narrative structure</text>
+    <text x="90" y="235" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Psychological depth</text>
+    <text x="90" y="255" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Architecture assessment</text>
+    <text x="90" y="275" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Security analysis</text>
+    <text x="90" y="295" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Natural conversation flow</text>
+    
+    <!-- Best For -->
+    <text x="80" y="330" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">Best For:</text>
+    <rect x="80" y="340" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="90" y="355" font-family="Arial, sans-serif" font-size="12" fill="#bbf7d0" text-anchor="start">Creative Writing & Storytelling</text>
+    
+    <rect x="80" y="375" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="90" y="390" font-family="Arial, sans-serif" font-size="12" fill="#bbf7d0" text-anchor="start">System Architecture Design</text>
+    
+    <rect x="80" y="410" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="90" y="425" font-family="Arial, sans-serif" font-size="12" fill="#bbf7d0" text-anchor="start">Security Vulnerability Analysis</text>
+    
+    <rect x="80" y="445" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="90" y="460" font-family="Arial, sans-serif" font-size="12" fill="#bbf7d0" text-anchor="start">Best Practices Compliance</text>
+    
+    <!-- Use Case -->
+    <text x="80" y="500" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="start">Example Use:</text>
+    <rect x="80" y="510" width="220" height="60" rx="5" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="90" y="525" font-family="Monaco, monospace" font-size="9" fill="#bbf7d0" text-anchor="start">aia --model gpt-4</text>
+    <text x="90" y="540" font-family="Monaco, monospace" font-size="9" fill="#bbf7d0" text-anchor="start">  story_concept</text>
+    <text x="90" y="555" font-family="Monaco, monospace" font-size="9" fill="#bbf7d0" text-anchor="start">  --genre fantasy</text>
+  </g>
+  
+  <!-- Claude-3-Sonnet Section -->
+  <g id="claude-section">
+    <rect x="360" y="80" width="280" height="550" rx="20" fill="url(#claudeGrad)" stroke="#dc2626" stroke-width="3"/>
+    
+    <!-- Header -->
+    <rect x="380" y="100" width="240" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="500" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Claude-3-Sonnet</text>
+    <text x="500" y="150" font-family="Arial, sans-serif" font-size="12" fill="#fecaca" text-anchor="middle">Consistency & Quality Focused</text>
+    
+    <!-- Strengths -->
+    <text x="390" y="190" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">Core Strengths:</text>
+    <text x="400" y="215" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Nuanced emotional intelligence</text>
+    <text x="400" y="235" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Character voice consistency</text>
+    <text x="400" y="255" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Code readability analysis</text>
+    <text x="400" y="275" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Comprehensive documentation</text>
+    <text x="400" y="295" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Long-term maintainability</text>
+    
+    <!-- Best For -->
+    <text x="390" y="330" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">Best For:</text>
+    <rect x="390" y="340" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="400" y="355" font-family="Arial, sans-serif" font-size="12" fill="#fecaca" text-anchor="start">Character Development</text>
+    
+    <rect x="390" y="375" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="400" y="390" font-family="Arial, sans-serif" font-size="12" fill="#fecaca" text-anchor="start">Code Quality Assessment</text>
+    
+    <rect x="390" y="410" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="400" y="425" font-family="Arial, sans-serif" font-size="12" fill="#fecaca" text-anchor="start">Documentation Standards</text>
+    
+    <rect x="390" y="445" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="400" y="460" font-family="Arial, sans-serif" font-size="12" fill="#fecaca" text-anchor="start">Consensus Synthesis</text>
+    
+    <!-- Use Case -->
+    <text x="390" y="500" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="start">Example Use:</text>
+    <rect x="390" y="510" width="220" height="60" rx="5" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="400" y="525" font-family="Monaco, monospace" font-size="9" fill="#fecaca" text-anchor="start">aia --model claude-3-sonnet</text>
+    <text x="400" y="540" font-family="Monaco, monospace" font-size="9" fill="#fecaca" text-anchor="start">  character_development</text>
+    <text x="400" y="555" font-family="Monaco, monospace" font-size="9" fill="#fecaca" text-anchor="start">  --focus emotional-depth</text>
+  </g>
+  
+  <!-- Gemini-Pro Section -->
+  <g id="gemini-section">
+    <rect x="670" y="80" width="280" height="550" rx="20" fill="url(#geminiGrad)" stroke="#f59e0b" stroke-width="3"/>
+    
+    <!-- Header -->
+    <rect x="690" y="100" width="240" height="60" rx="10" fill="rgba(255,255,255,0.15)"/>
+    <text x="810" y="130" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">Gemini-Pro</text>
+    <text x="810" y="150" font-family="Arial, sans-serif" font-size="12" fill="#fde68a" text-anchor="middle">Analytical & Mathematical Precision</text>
+    
+    <!-- Strengths -->
+    <text x="700" y="190" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">Core Strengths:</text>
+    <text x="710" y="215" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Mathematical precision</text>
+    <text x="710" y="235" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Cultural perspectives</text>
+    <text x="710" y="255" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Performance optimization</text>
+    <text x="710" y="275" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Logical dialogue progression</text>
+    <text x="710" y="295" font-family="Arial, sans-serif" font-size="13" fill="white" text-anchor="start">• Edge case analysis</text>
+    
+    <!-- Best For -->
+    <text x="700" y="330" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="white" text-anchor="start">Best For:</text>
+    <rect x="700" y="340" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="710" y="355" font-family="Arial, sans-serif" font-size="12" fill="#fde68a" text-anchor="start">Systematic Analysis</text>
+    
+    <rect x="700" y="375" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="710" y="390" font-family="Arial, sans-serif" font-size="12" fill="#fde68a" text-anchor="start">Performance Optimization</text>
+    
+    <rect x="700" y="410" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="710" y="425" font-family="Arial, sans-serif" font-size="12" fill="#fde68a" text-anchor="start">Mathematical Calculations</text>
+    
+    <rect x="700" y="445" width="220" height="25" rx="5" fill="rgba(255,255,255,0.1)"/>
+    <text x="710" y="460" font-family="Arial, sans-serif" font-size="12" fill="#fde68a" text-anchor="start">Edge Case Testing</text>
+    
+    <!-- Use Case -->
+    <text x="700" y="500" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white" text-anchor="start">Example Use:</text>
+    <rect x="700" y="510" width="220" height="60" rx="5" fill="rgba(0,0,0,0.2)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+    <text x="710" y="525" font-family="Monaco, monospace" font-size="9" fill="#fde68a" text-anchor="start">aia --model gemini-pro</text>
+    <text x="710" y="540" font-family="Monaco, monospace" font-size="9" fill="#fde68a" text-anchor="start">  performance_analysis</text>
+    <text x="710" y="555" font-family="Monaco, monospace" font-size="9" fill="#fde68a" text-anchor="start">  --focus optimization</text>
+  </g>
+  
+  <!-- Collaborative Arrow -->
+  <g id="collaboration">
+    <path d="M 330 350 Q 500 300 670 350" stroke="#a78bfa" stroke-width="4" fill="none" stroke-dasharray="10,5"/>
+    <text x="500" y="320" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#a78bfa" text-anchor="middle">Collaborative Power</text>
+    <text x="500" y="660" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fbbf24" text-anchor="middle">🤝 Combined: Exponential Intelligence Amplification</text>
+  </g>
+</svg>
