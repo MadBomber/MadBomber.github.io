@@ -3,11 +3,26 @@
 <% resource_title = strip_html(strip_newlines(title)) %>
 <title><% if resource_title != "Index" && !resource_title.to_s.empty? %><%= resource_title %> | <%= metadata.title %><% else %><%= metadata.title %>: <%= metadata.tagline %><% end %></title>
 
-<meta name="description" content="<%= metadata.description %>" />
+<%
+  is_post = resource.data.layout == "blog_post"
+  if is_post
+    post_text = resource.content.gsub(/<[^>]+>/, '').gsub(/\s+/, ' ').strip
+    page_description = post_text.length > 200 ? "#{post_text[0..197]}..." : post_text
+  else
+    page_description = metadata.description
+  end
+%>
+<meta name="description" content="<%= page_description %>" />
 
 <meta property="og:title" content="<%= !resource_title.to_s.empty? && resource_title != "Index" ? resource_title : metadata.title %>" />
-<meta property="og:description" content="<%= metadata.description %>" />
+<meta property="og:description" content="<%= page_description %>" />
+<% if is_post %>
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="<%= resource.date.iso8601 %>" />
+<meta property="article:author" content="<%= metadata.author.name %>" />
+<% else %>
 <meta property="og:type" content="website" />
+<% end %>
 <meta property="og:image" content="https://madbomber.github.io/images/social-card.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
@@ -16,7 +31,61 @@
 <meta name="twitter:image" content="https://madbomber.github.io/images/social-card.png" />
 <meta name="twitter:site" content="@<%= metadata.twitter_username %>" />
 
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
+<link rel="canonical" href="<%= absolute_url resource.relative_url %>" />
 <link rel="alternate" type="application/rss+xml" title="<%= metadata.title %>" href="/blog/feed.xml" />
+
+<% if is_post %>
+<script type="application/ld+json">
+<%= raw({
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": resource.data.title,
+  "datePublished": resource.date.iso8601,
+  "author": {
+    "@type": "Person",
+    "name": metadata.author.name,
+    "url": "https://madbomber.github.io/about/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": metadata.title,
+    "url": "https://madbomber.github.io"
+  },
+  "description": page_description
+}.to_json) %>
+</script>
+<% elsif resource.relative_url == "/about/" %>
+<script type="application/ld+json">
+<%= raw({
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": metadata.author.name,
+  "jobTitle": "Senior Software Engineer & Technical Manager",
+  "url": "https://madbomber.github.io/about/",
+  "image": "https://madbomber.github.io/images/bio-photo.jpg",
+  "sameAs": metadata.author.links.map { |l| l.url },
+  "worksFor": {
+    "@type": "Organization",
+    "name": metadata.title
+  }
+}.to_json) %>
+</script>
+<% else %>
+<script type="application/ld+json">
+<%= raw({
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": metadata.title,
+  "url": "https://madbomber.github.io",
+  "description": metadata.description,
+  "author": {
+    "@type": "Person",
+    "name": metadata.author.name
+  }
+}.to_json) %>
+</script>
+<% end %>
 
 <script>
   (function(){

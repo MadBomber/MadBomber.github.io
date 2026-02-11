@@ -14,6 +14,8 @@ permalink: /blog/feed.xml
       <pubDate><%= post.date.rfc822 %></pubDate>
       <link><%= absolute_url post.relative_url %></link>
       <guid isPermaLink="true"><%= absolute_url post.relative_url %></guid>
+      <% text = post.content.gsub(/<[^>]+>/, '').gsub(/\s+/, ' ').strip %>
+      <description><%= xml_escape(text.length > 500 ? "#{text[0..497]}..." : text) %></description>
       <% (post.data.categories || []).each do |cat| %>
       <category><%= cat %></category>
       <% end %>

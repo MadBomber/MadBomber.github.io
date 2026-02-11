@@ -17,6 +17,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initKeyboardNav()
   initSmoothScroll()
   initSocialShare()
+  initProjectFilter()
+  initHamburgerMenu()
 })
 
 // ── Search ──────────────────────────────────────────────────
@@ -81,7 +83,8 @@ function initSearch() {
     const results = searchIndex.filter(item =>
       item.title.toLowerCase().includes(query) ||
       item.categories.toLowerCase().includes(query) ||
-      item.tags.toLowerCase().includes(query)
+      item.tags.toLowerCase().includes(query) ||
+      (item.content && item.content.toLowerCase().includes(query))
     )
 
     container.innerHTML = results.slice(0, 10).map(r =>
@@ -323,6 +326,59 @@ function initSmoothScroll() {
       target.scrollIntoView({ behavior: "smooth", block: "start" })
       history.pushState(null, "", anchor.getAttribute("href"))
     })
+  })
+}
+
+// ── Project Filter & Sort ──────────────────────────────────
+function initProjectFilter() {
+  const input = document.getElementById("project-filter")
+  const sortSelect = document.getElementById("project-sort-select")
+  const grid = document.getElementById("projects-grid")
+  if (!grid) return
+
+  if (input) {
+    input.addEventListener("input", () => {
+      const query = input.value.toLowerCase().trim()
+      grid.querySelectorAll(".project-card").forEach(card => {
+        const text = card.textContent.toLowerCase()
+        card.classList.toggle("filter-hidden", query.length > 0 && !text.includes(query))
+      })
+    })
+  }
+
+  if (sortSelect) {
+    sortSelect.addEventListener("change", () => {
+      const cards = [...grid.querySelectorAll(".project-card")]
+      const sortBy = sortSelect.value
+
+      cards.sort((a, b) => {
+        if (sortBy === "downloads") {
+          return parseInt(b.dataset.downloads || 0) - parseInt(a.dataset.downloads || 0)
+        } else if (sortBy === "updated") {
+          return (b.dataset.updated || "").localeCompare(a.dataset.updated || "")
+        } else {
+          return (a.dataset.name || "").localeCompare(b.dataset.name || "")
+        }
+      })
+
+      cards.forEach(card => grid.appendChild(card))
+    })
+  }
+}
+
+// ── Hamburger Menu ────────────────────────────────────────
+function initHamburgerMenu() {
+  const btn = document.querySelector(".nav-hamburger")
+  if (!btn) return
+
+  const nav = btn.closest(".site-nav")
+  const ul = nav?.querySelector("ul")
+  if (!ul) return
+
+  btn.addEventListener("click", () => {
+    const expanded = btn.getAttribute("aria-expanded") === "true"
+    btn.setAttribute("aria-expanded", !expanded)
+    ul.classList.toggle("nav-open")
   })
 }
 

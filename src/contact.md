@@ -10,7 +10,7 @@ Have questions about our open source projects? Need help with implementation? Wa
 
 ### Contact Information
 
-**Email**: [dvanhoozer@duck.com](mailto:dvanhoozer@duck.com)
+**Email**: [bigdawg@madbombersoftware.com](mailto:bigdawg@madbombersoftware.com)
 *Primary contact for all professional inquiries*
 
 **LinkedIn**: [linkedin.com/in/dewayne-vanhoozer](https://linkedin.com/in/dewayne-vanhoozer)

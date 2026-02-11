@@ -30,7 +30,7 @@ layout: blog_default
 
     <nav class="post-nav">
       <% prev_post = collections.posts.resources.sort_by(&:date).reverse.detect { |p| p.date < resource.date } %>
-      <% next_post = collections.posts.resources.sort_by(&:date).reverse.detect { |p| p.date > resource.date } %>
+      <% next_post = collections.posts.resources.sort_by(&:date).detect { |p| p.date > resource.date } %>
       <% if prev_post %>
         <a href="<%= prev_post.relative_url %>" class="btn">&laquo; <%= prev_post.data.title %></a>
       <% end %>

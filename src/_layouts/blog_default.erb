@@ -4,6 +4,7 @@
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
   <body class="<%= data.layout %> <%= data.page_class %> <%= "has-toc-sidebar" if resource.data.layout == "blog_post" %>">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="reading-progress" aria-hidden="true"></div>
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
@@ -64,7 +65,7 @@
           <% end %>
         </aside>
       <% end %>
-      <main>
+      <main id="main-content">
         <%= yield %>
       </main>
       <aside class="toc-sidebar" id="toc-sidebar"></aside>

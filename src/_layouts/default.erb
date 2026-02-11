@@ -4,9 +4,10 @@
     <%= render "head", metadata: site.metadata, title: data.title %>
   </head>
   <body class="<%= data.layout %> <%= data.page_class %>">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <%= render Shared::Navbar.new(metadata: site.metadata, resource: resource) %>
 
-    <main>
+    <main id="main-content">
       <%= yield %>
     </main>
 

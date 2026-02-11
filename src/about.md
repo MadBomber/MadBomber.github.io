@@ -4,6 +4,15 @@ title: About
 permalink: /about/
 ---
 
+<div style="display: flex; align-items: flex-start; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+  <img src="/images/bio-photo.jpg" alt="Dewayne VanHoozer" style="width: 160px; height: 160px; border-radius: 50%; object-fit: cover; border: 3px solid var(--action-color);">
+  <div>
+    <h2 style="margin-top: 0; border: none; padding: 0;">Dewayne VanHoozer</h2>
+    <p style="color: var(--link-color); margin: 0.25rem 0;">Senior Software Engineer &amp; Technical Manager</p>
+    <p style="margin: 0.5rem 0;">Writing code since 1970. Ruby since 2005. Building AI-powered tools, open source gems, and mission-critical systems.</p>
+  </div>
+</div>
+
 ## Summary
 
 Accomplished Senior Software Engineer and Technical Manager with a robust background in developing mission-critical, test-driven applications. Proficient in Ruby, API development, data modeling, performance optimization, and artificial intelligence. Experienced in leading technical teams, enhancing application stability and performance, and mentoring developers. Passionate about open-source contributions and innovative software solutions.
