@@ -1,0 +1,161 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="conceptGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="developGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#059669;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="profileGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#b91c1c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="plotGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0891b2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0e7490;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="sceneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#020617"/>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#f1f5f9" text-anchor="middle">AIA Creative Writing Workflow</text>
+  
+  <!-- Step 1: Story Concepts -->
+  <g id="step1">
+    <rect x="50" y="80" width="220" height="120" rx="15" fill="url(#conceptGrad)" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="160" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">1. Story Concepts</text>
+    <text x="160" y="130" font-family="Arial, sans-serif" font-size="12" fill="#ddd6fe" text-anchor="middle">--no-consensus</text>
+    <text x="160" y="150" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">GPT-4 + Claude + Gemini</text>
+    <text x="160" y="170" font-family="Arial, sans-serif" font-size="10" fill="#ddd6fe" text-anchor="middle">Diverse creative perspectives</text>
+    <text x="160" y="185" font-family="Arial, sans-serif" font-size="10" fill="#ddd6fe" text-anchor="middle">Multiple concept variations</text>
+    
+    <!-- Command -->
+    <rect x="60" y="210" width="200" height="30" rx="5" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="70" y="225" font-family="Monaco, monospace" font-size="8" fill="#ddd6fe" text-anchor="start">aia --model "gpt-4,claude-3,</text>
+    <text x="70" y="235" font-family="Monaco, monospace" font-size="8" fill="#ddd6fe" text-anchor="start">gemini" --no-consensus</text>
+  </g>
+  
+  <!-- Step 2: World Building -->
+  <g id="step2">
+    <rect x="320" y="80" width="220" height="120" rx="15" fill="url(#developGrad)" stroke="#059669" stroke-width="2"/>
+    <text x="430" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">2. World Building</text>
+    <text x="430" y="130" font-family="Arial, sans-serif" font-size="12" fill="#bbf7d0" text-anchor="middle">--consensus</text>
+    <text x="430" y="150" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">GPT-4 + Claude</text>
+    <text x="430" y="170" font-family="Arial, sans-serif" font-size="10" fill="#bbf7d0" text-anchor="middle">Unified consistency</text>
+    <text x="430" y="185" font-family="Arial, sans-serif" font-size="10" fill="#bbf7d0" text-anchor="middle">Coherent foundation</text>
+    
+    <!-- Command -->
+    <rect x="330" y="210" width="200" height="30" rx="5" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="340" y="225" font-family="Monaco, monospace" font-size="8" fill="#bbf7d0" text-anchor="start">aia --model "gpt-4,claude-3"</text>
+    <text x="340" y="235" font-family="Monaco, monospace" font-size="8" fill="#bbf7d0" text-anchor="start">--consensus world_building</text>
+  </g>
+  
+  <!-- Step 3: Character Profiles -->
+  <g id="step3">
+    <rect x="590" y="80" width="220" height="120" rx="15" fill="url(#profileGrad)" stroke="#dc2626" stroke-width="2"/>
+    <text x="700" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">3. Character Profiles</text>
+    <text x="700" y="130" font-family="Arial, sans-serif" font-size="12" fill="#fecaca" text-anchor="middle">--no-consensus</text>
+    <text x="700" y="150" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">All Three Models</text>
+    <text x="700" y="170" font-family="Arial, sans-serif" font-size="10" fill="#fecaca" text-anchor="middle">Individual creativity</text>
+    <text x="700" y="185" font-family="Arial, sans-serif" font-size="10" fill="#fecaca" text-anchor="middle">Diverse personalities</text>
+    
+    <!-- Command -->
+    <rect x="600" y="210" width="200" height="30" rx="5" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="610" y="225" font-family="Monaco, monospace" font-size="8" fill="#fecaca" text-anchor="start">aia --no-consensus</text>
+    <text x="610" y="235" font-family="Monaco, monospace" font-size="8" fill="#fecaca" text-anchor="start">character_profiles</text>
+  </g>
+  
+  <!-- Step 4: Plot Outline -->
+  <g id="step4">
+    <rect x="860" y="80" width="220" height="120" rx="15" fill="url(#plotGrad)" stroke="#0891b2" stroke-width="2"/>
+    <text x="970" y="110" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">4. Plot Outline</text>
+    <text x="970" y="130" font-family="Arial, sans-serif" font-size="12" fill="#bae6fd" text-anchor="middle">--consensus</text>
+    <text x="970" y="150" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">GPT-4 + Claude</text>
+    <text x="970" y="170" font-family="Arial, sans-serif" font-size="10" fill="#bae6fd" text-anchor="middle">Structural integrity</text>
+    <text x="970" y="185" font-family="Arial, sans-serif" font-size="10" fill="#bae6fd" text-anchor="middle">Unified narrative arc</text>
+    
+    <!-- Command -->
+    <rect x="870" y="210" width="200" height="30" rx="5" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="880" y="225" font-family="Monaco, monospace" font-size="8" fill="#bae6fd" text-anchor="start">aia --consensus plot_outline</text>
+    <text x="880" y="235" font-family="Monaco, monospace" font-size="8" fill="#bae6fd" text-anchor="start">world_building.md chars.md</text>
+  </g>
+  
+  <!-- Step 5: Scene Writing -->
+  <g id="step5">
+    <rect x="400" y="320" width="400" height="120" rx="15" fill="url(#sceneGrad)" stroke="#f59e0b" stroke-width="2"/>
+    <text x="600" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">5. Scene Writing</text>
+    <text x="600" y="370" font-family="Arial, sans-serif" font-size="12" fill="#fde68a" text-anchor="middle">--no-consensus for variety</text>
+    <text x="600" y="390" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">All Three Models</text>
+    <text x="600" y="410" font-family="Arial, sans-serif" font-size="10" fill="#fde68a" text-anchor="middle">Multiple scene approaches • Different pacing • Varied dialogue styles</text>
+    
+    <!-- Command -->
+    <rect x="410" y="450" width="380" height="30" rx="5" fill="rgba(0,0,0,0.3)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <text x="420" y="465" font-family="Monaco, monospace" font-size="8" fill="#fde68a" text-anchor="start">echo "protagonist confronts antagonist" | aia --model "gpt-4,claude-3,gemini"</text>
+    <text x="420" y="475" font-family="Monaco, monospace" font-size="8" fill="#fde68a" text-anchor="start">--no-consensus scene_writing plot_outline.md</text>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <defs>
+    <marker id="flowArrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L2,10 L10,6 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  
+  <!-- Step 1 to Step 2 -->
+  <line x1="270" y1="140" x2="320" y2="140" stroke="#64748b" stroke-width="3" marker-end="url(#flowArrow)"/>
+  <!-- Step 2 to Step 3 -->
+  <line x1="540" y1="140" x2="590" y2="140" stroke="#64748b" stroke-width="3" marker-end="url(#flowArrow)"/>
+  <!-- Step 3 to Step 4 -->
+  <line x1="810" y1="140" x2="860" y2="140" stroke="#64748b" stroke-width="3" marker-end="url(#flowArrow)"/>
+  <!-- Step 4 to Step 5 -->
+  <path d="M 970 200 Q 970 260 600 320" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#flowArrow)"/>
+  
+  <!-- Strategy boxes -->
+  <g id="strategies">
+    <!-- Individual Strategy -->
+    <rect x="50" y="520" width="250" height="120" rx="10" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <text x="175" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">Individual Mode Strategy</text>
+    <text x="175" y="565" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">--no-consensus</text>
+    
+    <text x="60" y="585" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">✓ Diverse creative perspectives</text>
+    <text x="60" y="600" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">✓ Multiple approach options</text>
+    <text x="60" y="615" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">✓ Creative brainstorming</text>
+    <text x="60" y="630" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">Best for: Concepts, Characters, Scenes</text>
+    
+    <!-- Consensus Strategy -->
+    <rect x="350" y="520" width="250" height="120" rx="10" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <text x="475" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#059669" text-anchor="middle">Consensus Mode Strategy</text>
+    <text x="475" y="565" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">--consensus</text>
+    
+    <text x="360" y="585" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">✓ Unified direction</text>
+    <text x="360" y="600" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">✓ Consistent world-building</text>
+    <text x="360" y="615" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">✓ Structural integrity</text>
+    <text x="360" y="630" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">Best for: World-building, Plot Structure</text>
+    
+    <!-- Workflow Benefits -->
+    <rect x="650" y="520" width="300" height="120" rx="10" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <text x="800" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b5cf6" text-anchor="middle">Multi-Stage Workflow Benefits</text>
+    
+    <text x="660" y="570" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">🎯 Strategic mode switching</text>
+    <text x="660" y="585" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">⚡ Iterative refinement</text>
+    <text x="660" y="600" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">🏗️ Foundation → Details progression</text>
+    <text x="660" y="615" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">📚 Context builds throughout process</text>
+    <text x="660" y="630" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="start">🎨 Professional writer's room experience</text>
+  </g>
+  
+  <!-- Final Result -->
+  <rect x="400" y="680" width="400" height="60" rx="15" fill="#7c3aed" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="600" y="705" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="white" text-anchor="middle">🏆 Rich, Multi-Dimensional Story</text>
+  <text x="600" y="725" font-family="Arial, sans-serif" font-size="12" fill="#ddd6fe" text-anchor="middle">Coherent world • Complex characters • Engaging scenes</text>
+  
+  <!-- Arrow to final result -->
+  <line x1="600" y1="440" x2="600" y2="680" stroke="#8b5cf6" stroke-width="3" marker-end="url(#flowArrow)"/>
+</svg>

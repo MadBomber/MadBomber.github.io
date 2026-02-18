@@ -8,11 +8,26 @@ permalink: /projects/
   <h1>Open Source Projects</h1>
   <p class="tagline">Ruby gems and tools for AI-driven development</p>
   <p class="project-count"><%= site.data.projects.size %> documented projects with mkdocs</p>
+  <div class="projects-controls">
+    <input type="text" id="project-filter" class="project-filter-input"
+           placeholder="Filter projects..." autocomplete="off">
+    <div class="project-sort">
+      <label for="project-sort-select">Sort:</label>
+      <select id="project-sort-select" class="project-sort-select">
+        <option value="downloads" selected>Downloads</option>
+        <option value="updated">Recently Updated</option>
+        <option value="name">Name</option>
+      </select>
+    </div>
+  </div>
 </div>
 
-<div class="projects-grid">
+<div class="projects-grid" id="projects-grid">
   <% site.data.projects.each do |project| %>
-  <div class="project-card">
+  <div class="project-card"
+       data-downloads="<%= project['downloads'].to_i %>"
+       data-updated="<%= project['gem_version_date'] || '1970-01-01' %>"
+       data-name="<%= project['name'].downcase %>">
     <div class="project-header">
       <h3><%= project['name'] %></h3>
       <% if project['downloads'].to_i > 0 %>
@@ -65,6 +80,33 @@ permalink: /projects/
   </div>
   <% end %>
 </div>
+
+<script type="application/ld+json">
+<%= raw({
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Open Source Projects",
+  "description": "Ruby gems and tools for AI-driven development",
+  "url": "https://madbomber.github.io/projects/",
+  "mainEntity": {
+    "@type": "ItemList",
+    "numberOfItems": site.data.projects.size,
+    "itemListElement": site.data.projects.first(10).each_with_index.map { |p, i|
+      {
+        "@type": "ListItem",
+        "position": i + 1,
+        "item": {
+          "@type": "SoftwareSourceCode",
+          "name": p['name'],
+          "description": p['description'],
+          "codeRepository": p['github_url'],
+          "programmingLanguage": p['language']
+        }.merge(p['gem_version'] ? { "version": p['gem_version'] } : {})
+      }
+    }
+  }
+}.to_json) %>
+</script>
 
 <div class="projects-footer">
   <h2>Contributing</h2>

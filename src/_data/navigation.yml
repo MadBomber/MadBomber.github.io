@@ -1,0 +1,13 @@
+aia_series:
+  - title: "AIA Philosophy"
+    url: /blog/engineering/AIA-Philosophy/
+  - title: "Batch Mode"
+    url: /blog/engineering/AIA-Batch-Mode/
+  - title: "Workflows"
+    url: /blog/engineering/AIA-Workflows/
+  - title: "Chat Mode"
+    url: /blog/engineering/AIA-Chat-Mode/
+  - title: "Advanced Tool Integration"
+    url: /blog/engineering/AIA-Advanced-Tool-Integration/
+  - title: "Release Notes"
+    url: /blog/engineering/AIA-Release-Notes-v0.9.7/

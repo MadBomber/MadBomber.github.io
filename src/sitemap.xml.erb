@@ -1,0 +1,15 @@
+---
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <% site.resources.reject { |r| r.relative_url.nil? || r.data.exclude_from_sitemap }.each do |resource| %>
+  <% next if resource.relative_url.end_with?(".json", ".xml") %>
+  <url>
+    <loc><%= absolute_url(resource.relative_url) %></loc>
+    <% if resource.date %>
+    <lastmod><%= resource.date.iso8601 %></lastmod>
+    <% end %>
+  </url>
+  <% end %>
+</urlset>

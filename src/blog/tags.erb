@@ -1,0 +1,26 @@
+---
+layout: blog_default
+title: Posts by Tag
+permalink: /blog/tags/
+---
+
+<h1>Posts by Tag</h1>
+
+<%
+  tag_map = {}
+  collections.posts.resources.each do |post|
+    (post.data.tags || []).each do |tag|
+      tag_map[tag] ||= []
+      tag_map[tag] << post
+    end
+  end
+%>
+
+<div class="tag-cloud">
+  <% tag_map.sort.each do |tag, posts| %>
+    <% slug = tag.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "") %>
+    <a href="/blog/tags/<%= slug %>/" class="tag">
+      <%= tag %> (<%= posts.size %>)
+    </a>
+  <% end %>
+</div>

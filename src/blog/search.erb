@@ -1,0 +1,17 @@
+---
+permalink: /blog/search.json
+---
+<% require 'json'
+posts = collections.posts.resources.sort_by { |p| p.date }.reverse
+json = posts.map { |post|
+  text = post.content.gsub(/<[^>]+>/, '').gsub(/\s+/, ' ').strip
+  {
+    title: post.data.title.to_s,
+    url: post.relative_url,
+    date: post.date.strftime('%Y-%m-%d'),
+    categories: (post.data.categories || []).join(', '),
+    tags: (post.data.tags || []).join(', '),
+    content: text[0..300].to_s
+  }
+}.to_json
+%><%= raw json %>

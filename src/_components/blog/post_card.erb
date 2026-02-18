@@ -1,0 +1,19 @@
+<article class="post-card">
+  <h3><a href="<%= post.relative_url %>"><%= post.data.title %></a></h3>
+  <div class="post-card-meta">
+    <time datetime="<%= post.date.iso8601 %>"><%= post.date.strftime("%B %d, %Y") %></time>
+    <span class="read-time">~<%= read_time %> min read</span>
+    <% post.data.categories&.each do |cat| %>
+      <span class="category"><%= cat %></span>
+    <% end %>
+  </div>
+  <% if post.data.tags&.any? %>
+    <div class="post-card-tags">
+      <% post.data.tags.each do |tag| %>
+        <% slug = tag.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "") %>
+        <a href="/blog/tags/<%= slug %>/" class="tag"><%= tag %></a>
+      <% end %>
+    </div>
+  <% end %>
+  <p class="post-card-excerpt"><%= excerpt %></p>
+</article>

@@ -44,6 +44,8 @@ navigation:
   - title: About
     url: /about/
   - title: Blog
-    url: https://madbomber.github.io/blog/
+    url: /blog/
   - title: Contact
     url: /contact/
+
+twitter_username: madbomber0

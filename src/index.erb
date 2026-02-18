@@ -81,19 +81,34 @@ title: Home
   <a href="/projects/" class="btn">View All <%= site.data.projects.size %> Projects</a>
 </p>
 
-<h2>Get Involved</h2>
+<h2>Latest from the Blog</h2>
 
-<ul>
-  <li>Star our projects on <a href="https://github.com/MadBomber">GitHub</a></li>
-  <li>Report issues or request features</li>
-  <li>Contribute code or documentation</li>
-  <li>Join the discussion in our repositories</li>
-</ul>
+<% recent_posts = collections.posts.resources.sort_by(&:date).reverse.first(3) %>
+<div class="blog-preview-grid">
+  <% recent_posts.each do |post| %>
+    <div class="blog-preview-card">
+      <div class="blog-preview-meta">
+        <time datetime="<%= post.date.iso8601 %>"><%= post.date.strftime("%B %d, %Y") %></time>
+        <% (post.data.categories || []).each do |cat| %>
+          <span class="blog-preview-category"><%= cat %></span>
+        <% end %>
+      </div>
+      <h3><a href="<%= post.relative_url %>"><%= post.data.title %></a></h3>
+      <% text = post.content.gsub(/<[^>]+>/, '').gsub(/\s+/, ' ').strip %>
+      <p class="blog-preview-excerpt"><%= text.length > 160 ? "#{text[0..157]}..." : text %></p>
+    </div>
+  <% end %>
+</div>
+
+<p style="text-align: center; margin-top: 1rem;">
+  <a href="/blog/" class="btn">Read the Blog</a>
+</p>
 
 <hr>
 
-<div style="text-align: center; margin-top: 2rem;">
-  <a href="https://github.com/MadBomber" class="btn">GitHub Profile</a>
-  <a href="https://github.com/MadBomber?tab=repositories" class="btn">All Projects</a>
-  <a href="/contact/" class="btn">Contact Us</a>
+<div style="text-align: center; margin: 2rem 0;">
+  <p style="color: var(--muted-color); margin-bottom: 1rem;">Contributions, issues, and stars are always welcome.</p>
+  <a href="https://github.com/MadBomber" class="btn">GitHub</a>
+  <a href="https://rubygems.org/profiles/MadBomber" class="btn" style="background: #e9573f;">RubyGems</a>
+  <a href="/contact/" class="btn" style="background: #333;">Contact</a>
 </div>

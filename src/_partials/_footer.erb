@@ -3,7 +3,7 @@
     <p>&copy; <%= Time.now.year %> <%= metadata.title %>. All rights reserved.</p>
     <div class="footer-links">
       <% metadata.social_links.each do |link| %>
-        <a href="<%= link.url %>" target="_blank" rel="noopener"><%= link.label %></a>
+        <a href="<%= link.url %>" target="_blank" rel="noopener" aria-label="<%= link.label %> (opens in new tab)"><%= link.label %></a>
       <% end %>
     </div>
     <p class="footer-tagline"><%= metadata.tagline %></p>

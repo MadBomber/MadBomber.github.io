@@ -1,0 +1,31 @@
+---
+layout: blog_default
+title: Posts by Category
+permalink: /blog/categories/
+---
+
+<h1>Posts by Category</h1>
+
+<%
+  cat_map = {}
+  collections.posts.resources.each do |post|
+    (post.data.categories || []).each do |cat|
+      cat_map[cat] ||= []
+      cat_map[cat] << post
+    end
+  end
+%>
+
+<div class="category-list">
+  <% cat_map.sort.each do |category, posts| %>
+    <% slug = category.downcase.gsub(/[^a-z0-9]+/, "-").gsub(/^-|-$/, "") %>
+    <% cat_meta = site.data.categories[category] %>
+    <a href="/blog/categories/<%= slug %>/" class="category-list-item">
+      <h2><%= category %></h2>
+      <% if cat_meta && cat_meta["description"] %>
+        <p><%= cat_meta["description"] %></p>
+      <% end %>
+      <span class="category-count"><%= posts.size %> posts</span>
+    </a>
+  <% end %>
+</div>
