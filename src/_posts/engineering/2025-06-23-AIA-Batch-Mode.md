@@ -11,6 +11,8 @@ tags:
   - Automation
 ---
 
+> **Update -- February 2026:** This article was written for AIA v0.9.x. With the release of **AIA v1.0.0**, prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **Mastering AIA's Batch Mode: From Simple Questions to Complex Workflows**
 
 AIA (AI Assistant) is a command-line interface (CLI) written in Ruby, designed to be a powerful, flexible, and scriptable partner for your daily tasks. This article is the second in a comprehensive series providing a deep dive into the AIA CLI, focusing on its non-interactive "batch mode" — the foundation of AIA's powerful AI processing capabilities. The example prompts used in this article are for illustration purposes. While AIA is a daily tool for my software development activities along with claude code and aider, AIA is also a powerful business and recreational tool.  Like any coding language, AIA's batch mode is domain agnostic.  Whether you use it to review or develop software source code, write documentation, or generate content for marketing materials, AIA's batch mode can help you automate tasks and streamline your workflow.

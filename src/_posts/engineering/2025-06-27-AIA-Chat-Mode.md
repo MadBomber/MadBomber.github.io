@@ -11,6 +11,8 @@ tags:
   - LLM
 ---
 
+> **Update -- February 2026:** This article was written for AIA v0.9.x. With the release of **AIA v1.0.0**, prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **Interactive AI Sessions: Mastering AIA's Chat Mode**
 
 In the evolving landscape of AI-assisted workflows, real-time interaction with AI is increasingly valuable. This article, the fourth in our series, explores AIA's interactive chat mode, transforming it from a batch processing tool into a dynamic conversational partner. We'll cover the fundamentals of chat mode, its differences from batch mode, advanced features, practical use cases, and best practices to help you leverage AIA effectively.

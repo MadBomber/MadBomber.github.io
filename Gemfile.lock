@@ -101,7 +101,7 @@ GEM
       dry-inflector (~> 1.0)
       dry-logic (~> 1.4)
       zeitwerk (~> 2.6)
-    erb (6.0.1)
+    erb (6.0.2)
     erubi (1.13.1)
     etcher (4.1.0)
       cogger (~> 2.0)
@@ -201,17 +201,17 @@ GEM
     roda (3.101.0)
       rack
     rouge (4.7.0)
-    ruby_llm (1.12.0)
+    ruby_llm (1.12.1)
       base64
       event_stream_parser (~> 1)
       faraday (>= 2.0)
       faraday-multipart (>= 1)
       faraday-net_http (>= 1)
       faraday-retry (>= 2.0)
-      marcel (~> 1.0)
-      ruby_llm-schema (~> 0.2.1)
+      marcel (~> 1)
+      ruby_llm-schema (~> 0)
       zeitwerk (~> 2)
-    ruby_llm-schema (0.2.5)
+    ruby_llm-schema (0.3.0)
     runcom (13.1.0)
       refinements (~> 14.0)
       xdg (~> 10.0)
@@ -264,7 +264,7 @@ GEM
     versionaire (15.1.0)
       refinements (~> 14.0)
     xdg (10.1.0)
-    zeitwerk (2.7.4)
+    zeitwerk (2.7.5)
 
 PLATFORMS
   aarch64-linux-gnu
@@ -314,7 +314,7 @@ CHECKSUMS
   dry-monads (1.9.0) sha256=9348a67b5c862c7a876342dbd94737fdf3fb3c17978382cf6801a85b27215816
   dry-schema (1.15.0) sha256=0f2a34adba4206bd6d46ec1b6b7691b402e198eecaff1d8349a7d48a77d82cd2
   dry-types (1.9.1) sha256=baebeecdb9f8395d6c9d227b62011279440943e3ef2468fe8ccc1ba11467f178
-  erb (6.0.1) sha256=28ecdd99c5472aebd5674d6061e3c6b0a45c049578b071e5a52c2a7f13c197e5
+  erb (6.0.2) sha256=9fe6264d44f79422c87490a1558479bd0e7dad4dd0e317656e67ea3077b5242b
   erubi (1.13.1) sha256=a082103b0885dbc5ecf1172fede897f9ebdb745a4b97a5e8dc63953db1ee4ad9
   etcher (4.1.0) sha256=cdac3e890c188f1b13200d28d46fc021c7d870060a272e17ef31086efcb3782a
   event_stream_parser (1.0.0) sha256=a2683bab70126286f8184dc88f7968ffc4028f813161fb073ec90d171f7de3c8
@@ -374,8 +374,8 @@ CHECKSUMS
   rexml (3.4.4) sha256=19e0a2c3425dfbf2d4fc1189747bdb2f849b6c5e74180401b15734bc97b5d142
   roda (3.101.0) sha256=07b13bb5fbb8f606c17f8c21ae4897f629e59cb6f398665da6666920efd39843
   rouge (4.7.0) sha256=dba5896715c0325c362e895460a6d350803dbf6427454f49a47500f3193ea739
-  ruby_llm (1.12.0) sha256=b99e1252d1d0f60e576ce93086257e0ec2a0a8d629a5353dcd2447d0901180d5
-  ruby_llm-schema (0.2.5) sha256=b08cd42e8de7100325e2e868672a56f1915eb23692bb808f51f214e41392104f
+  ruby_llm (1.12.1) sha256=154722483f2ab1c08d474eb696f56ed4ea046f8ac12fceb2c16a67f0a475c125
+  ruby_llm-schema (0.3.0) sha256=a591edc5ca1b7f0304f0e2261de61ba4b3bea17be09f5cf7558153adfda3dec6
   runcom (13.1.0) sha256=58a4dd848408fa0fb342f4489c13074a8013ff0af74d0d04c16383a3d3f05ce5
   samovar (2.4.1) sha256=c3b91dd0580771e3bc600621c1111f29542529dcffafaac3b6bf068b3f309e80
   securerandom (0.4.1) sha256=cc5193d414a4341b6e225f0cb4446aceca8e50d5e1888743fac16987638ea0b1
@@ -392,7 +392,7 @@ CHECKSUMS
   uri (1.1.1) sha256=379fa58d27ffb1387eaada68c749d1426738bd0f654d812fcc07e7568f5c57c6
   versionaire (15.1.0) sha256=10584edf130282016869dddb6167c221b979f1f7827d3764b14b08473d80e478
   xdg (10.1.0) sha256=a7128ccbed0d80af663587ad1f6e04caee21d5dd5aa6c62e748e3e26d1e24d9c
-  zeitwerk (2.7.4) sha256=2bef90f356bdafe9a6c2bd32bcd804f83a4f9b8bc27f3600fff051eb3edcec8b
+  zeitwerk (2.7.5) sha256=d8da92128c09ea6ec62c949011b00ed4a20242b255293dd66bf41545398f73dd
 
 BUNDLED WITH
   4.0.6

@@ -8,6 +8,8 @@ tags:
   - Software Design
   - SOLID
 ---
+> **Update -- February 2026:** The AIA tool referenced in this article has reached **v1.0.0** with significant new capabilities including multi-model consensus, MCP integration, and a new prompt format. For current AIA documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 Beyond Syntax: Understanding Prompts as the New Programming Language in Software Development
 
 **Abstract**

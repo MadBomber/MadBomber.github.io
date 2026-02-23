@@ -11,6 +11,8 @@ tags:
   - Tools
 ---
 
+> **Update -- February 2026:** This article was written for AIA v0.9.x. With the release of **AIA v1.0.0**, prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **From Dynamic Prompts to Advanced Tool Integration**
 
 The AI Assistant (AIA) is a command-line interface (CLI) written in Ruby and distributed as a Ruby gem (`gem install aia`). AIA leverages the `ruby_llm` gem as its API library for accessing Large Language Model (LLM) provider services, enabling seamless integration with various AI models. Additionally, It also uses the `ruby_llm-mcp` gem to extend its capabilities by providing a way to use Model Context Protocol (MCP) clients to access the capabilities of MCP servers.

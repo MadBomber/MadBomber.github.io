@@ -10,6 +10,8 @@ tags:
   - Tools
   - LLM
 ---
+> **Update -- February 2026:** These release notes cover AIA v0.9.7. **AIA v1.0.0** has since been released with breaking changes: prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **Powerful New Features for Enhanced AI-Powered Prompt Management**
 
 <img src="/blog/images/aia.png" alt="May I take your prompt?">

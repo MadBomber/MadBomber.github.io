@@ -11,6 +11,8 @@ tags:
   - LLM
 ---
 
+> **Update -- February 2026:** This article was written for AIA v0.9.12. With the release of **AIA v1.0.0**, prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). The multi-model and consensus features described here remain core to AIA but the syntax has evolved. For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **The AI Renaissance: How AIA's Multi-Model Architecture Is Revolutionizing Creative and Technical Work**
 
 In the rapidly evolving landscape of artificial intelligence, we're witnessing something unprecedented: the emergence of truly collaborative AI systems. Enter AIA (AI Assistant) version 0.9.12, which introduces groundbreaking multi-model capabilities that fundamentally change how we interact with and leverage AI for both creative endeavors and technical challenges.
