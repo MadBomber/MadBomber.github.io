@@ -9,6 +9,8 @@ tags:
   - Templates
   - CLI
 ---
+> **Update -- February 2026:** This article was written for an earlier version of AIA. With the release of **AIA v1.0.0**, prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 Pre-compositional templating of prompts using AIA endows prompt engineers with a significant level of power typically reserved for specialized gen-AI applications. AIA is a versatile command-line utility, with capabilities limited only by the imagination behind the prompts you create.
 
 A pre-compositional prompt acts as a foundational template, which can be expanded into a fully fleshed-out prompt. This prompt is then handed off to a generative AI processor to transform into a response that meets your specific requirements.

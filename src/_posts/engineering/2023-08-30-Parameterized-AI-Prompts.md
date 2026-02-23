@@ -9,6 +9,8 @@ tags:
   - Templates
   - CLI
 ---
+> **Update -- February 2026:** This article describes `aip.rb`, an early precursor to the AIA project. AIA has since evolved into a full-featured CLI tool now at **v1.0.0** with a completely new prompt format, ERB-based parameters, and multi-model support. For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **Parameterized AI Prompts**
 
 Over the last few days, I have created a simple Ruby program called `aip.rb` in my scripts repository on GitHub. This program allows me to run stored gen-AI prompts against input text files and generate an output. The program follows the input-process-output (IPO) paradigm, but since AI is involved, it adheres to the principle of "garbage in, garbage out," as my friend @Squirrel would say. The AI processing part is handled by `mods`, a CLI tool that provides access to OpenAI's GPT-4 large language model (LLM). The Ruby code manipulates the command parameters, executes the command, and saves the output to a file.

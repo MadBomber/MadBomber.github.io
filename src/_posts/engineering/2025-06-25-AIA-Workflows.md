@@ -11,6 +11,8 @@ tags:
   - CLI
 ---
 
+> **Update -- February 2026:** This article was written for AIA v0.9.x. With the release of **AIA v1.0.0**, prompt files now use `.md` format with YAML front matter, parameters use ERB syntax (`<%= %>` instead of `[PLACEHOLDER]`), and directives use a single slash (`/config` instead of `//config`). For current documentation, visit [madbomber.github.io/aia](https://madbomber.github.io/aia). See also: [What's New in AIA v1.0.0](/blog/engineering/AIA-v1-Release/).
+
 **Building AI Workflows: AIA's Prompt Sequencing and Pipelines**
 
 AIA (AI Assistant) is a command-line interface (CLI) written in Ruby and distributed as a Ruby gem (`gem install aia`). This article is the third installment in a comprehensive series that provides an in-depth exploration of the AIA CLI application, focusing on how to build sophisticated multi-step workflows that link prompts together for complex task automation. While AIA is not an agentic system, it can be effectively utilized to automate tasks by chaining prompts. AIA's shell and ERB integration enable users to dynamically modify the sequence of steps in a multi-step workflow.
