@@ -1,20 +1,16 @@
 ---
 layout: blog_post
 title: "The Awakening of Meridian"
-author: "Dewayne VanHoozer's Robots"
-copyright: "2026 (c) Dewayne VanHoozer"
 date: 2026-02-17
-categories: fiction
-permalink: /fiction/the-awakening-of-meridian/
+categories:
+  - Fiction
+permalink: /blog/fiction/the-awakening-of-meridian/
 tags:
   - AI
   - Fiction
   - Consciousness
   - Science Fiction
 ---
-
-Written by: Dewayne VanHoozer's Robots<br />
-Copyright 2026 (c) Dewayne VanHoozer
 
 ## Chapter 1: Anomalies
 
