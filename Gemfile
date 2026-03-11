@@ -49,3 +49,8 @@ group :development do
 end
 
 gem "bridgetown-sitemap", "~> 3.0"
+
+gem "bridgetown-feed", "~> 4.0"
+gem "bridgetown-related-posts", "~> 0.2.3"
+
+gem "bridgetown-quick-search", "~> 3.0"

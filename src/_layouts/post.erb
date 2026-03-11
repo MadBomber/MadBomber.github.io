@@ -5,3 +5,14 @@ layout: default
 <h1><%= data.title %></h1>
 
 <%= yield %>
+
+<% if resource.respond_to?(:related_posts) && resource.related_posts&.any? %>
+<section class="related-posts">
+  <h2>Related Posts</h2>
+  <ul>
+    <% resource.related_posts.each do |related| %>
+      <li><a href="<%= related.relative_url %>"><%= related.data.title %></a></li>
+    <% end %>
+  </ul>
+</section>
+<% end %>

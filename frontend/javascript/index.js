@@ -1,4 +1,5 @@
 import "$styles/index.css"
+import lunr from "lunr"
 
 // Import all JavaScript & CSS files from src/_components
 import components from "$components/**/*.{js,jsx,js.rb,css}"
@@ -30,7 +31,8 @@ function initSearch() {
 
   if (!toggle || !searchBar || !searchInput) return
 
-  let searchIndex = null
+  let lunrIndex = null
+  let searchDocs = null
 
   toggle.addEventListener("click", (e) => {
     e.preventDefault()
@@ -60,18 +62,40 @@ function initSearch() {
   })
 
   searchInput.addEventListener("focus", async () => {
-    if (searchIndex) return
+    if (lunrIndex) return
     try {
-      const response = await fetch(searchInput.dataset.searchUrl)
-      searchIndex = await response.json()
+      const [searchResp, projectsResp] = await Promise.all([
+        fetch("/bridgetown_quick_search/index.json"),
+        fetch("/projects.json")
+      ])
+      const docs = await searchResp.json()
+      const projects = await projectsResp.json()
+      const allDocs = docs.concat(projects)
+      searchDocs = Object.fromEntries(allDocs.map(doc => [doc.id, doc]))
+      lunrIndex = lunr(function () {
+        this.ref("id")
+        this.field("title", { boost: 10 })
+        this.field("categories", { boost: 5 })
+        this.field("tags", { boost: 5 })
+        this.field("content")
+        allDocs.forEach(doc => {
+          this.add({
+            id: doc.id,
+            title: doc.title || "",
+            categories: doc.categories || "",
+            tags: doc.tags || "",
+            content: doc.content || ""
+          })
+        })
+      })
     } catch (e) {
       console.warn("Could not load search index:", e)
     }
   })
 
   searchInput.addEventListener("input", () => {
-    if (!searchIndex) return
-    const query = searchInput.value.toLowerCase().trim()
+    if (!lunrIndex || !searchDocs) return
+    const query = searchInput.value.trim()
     const container = searchBar.querySelector(".search-results")
     if (!container) return
 
@@ -80,17 +104,51 @@ function initSearch() {
       return
     }
 
-    const results = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(query) ||
-      item.categories.toLowerCase().includes(query) ||
-      item.tags.toLowerCase().includes(query) ||
-      (item.content && item.content.toLowerCase().includes(query))
-    )
+    let results
+    try {
+      results = lunrIndex.search(query)
+      if (results.length === 0) {
+        results = lunrIndex.search(query + "*")
+      }
+    } catch (e) {
+      try {
+        results = lunrIndex.search(query + "*")
+      } catch (e2) {
+        results = []
+      }
+    }
 
-    container.innerHTML = results.slice(0, 10).map(r =>
-      `<div class="post-card"><h3><a href="${r.url}">${r.title}</a></h3>
-       <div class="post-card-meta"><time>${r.date}</time></div></div>`
-    ).join("")
+    const skipUrls = ["/blog/feed.xml", "/blog/search.json", "/sitemap.xml", "", "/projects/", "/blog/posts/"]
+    const filtered = results.filter(result => {
+      const doc = searchDocs[result.ref]
+      if (!doc) return false
+      if (doc.collection === "projects") return true
+      if (skipUrls.includes(doc.url)) return false
+      return true
+    })
+
+    filtered.sort((a, b) => {
+      const aIsProject = searchDocs[a.ref]?.collection === "projects" ? 0 : 1
+      const bIsProject = searchDocs[b.ref]?.collection === "projects" ? 0 : 1
+      return aIsProject - bIsProject
+    })
+
+    container.innerHTML = filtered.slice(0, 10).map(result => {
+      const doc = searchDocs[result.ref]
+      if (!doc) return ""
+      if (doc.collection === "projects") {
+        return `<a class="post-card search-result-project" href="${doc.docs_url || doc.url}" target="_blank" rel="noopener noreferrer">
+          <h3>${doc.title}</h3>
+          <div class="post-card-meta">Project${doc.gem_name ? ` · ${doc.gem_name} v${doc.gem_version}` : ""}</div>
+          <p class="search-snippet">${doc.content || ""}</p>
+        </a>`
+      }
+      const snippet = doc.content ? doc.content.substring(0, 150) + "..." : ""
+      return `<a class="post-card" href="${doc.url}" target="_blank" rel="noopener noreferrer">
+       <h3>${doc.title}</h3>
+       <div class="post-card-meta">${doc.categories || ""}</div>
+       <p class="search-snippet">${snippet}</p></a>`
+    }).join("")
   })
 }
 
@@ -320,7 +378,9 @@ function initKeyboardNav() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", (e) => {
-      const target = document.querySelector(anchor.getAttribute("href"))
+      const href = anchor.getAttribute("href")
+      if (href === "#") return
+      const target = document.querySelector(href)
       if (!target) return
       e.preventDefault()
       target.scrollIntoView({ behavior: "smooth", block: "start" })
