@@ -21,6 +21,8 @@ Bridgetown.configure do |config|
 
   permalink "/blog/:categories/:title/"
 
+  init :"bridgetown-sitemap"
+
   pagination do
     enabled true
   end

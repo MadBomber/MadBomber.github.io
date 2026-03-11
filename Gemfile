@@ -47,3 +47,5 @@ group :development do
   gem "tocer"
   gem "rake"
 end
+
+gem "bridgetown-sitemap", "~> 3.0"
