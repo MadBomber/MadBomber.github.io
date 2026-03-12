@@ -1091,7 +1091,8 @@ pre:hover .code-copy-btn {
   }
 
   .reading-controls,
-  .social-share {
+  .social-share,
+  .listen-controls {
     display: none !important;
   }
 }
@@ -1258,6 +1259,127 @@ html.light-theme {
 .share-copy.copied {
   background: #2d6a4f;
   color: #b7e4c7;
+}
+
+/* Listen controls */
+.listen-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+  padding: 0.75rem 1rem;
+  background: var(--body-background);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.listen-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  background: var(--border-color);
+  color: var(--body-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.listen-btn:hover {
+  background: #4a4a4a;
+  transform: translateY(-1px);
+}
+
+.listen-btn.listening {
+  background: var(--action-color);
+  border-color: var(--action-color);
+  color: white;
+}
+
+.listen-btn.paused {
+  background: #3d5a80;
+  border-color: #3d5a80;
+  color: white;
+}
+
+.listen-sliders {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.listen-slider-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted-color);
+}
+
+.listen-slider-label {
+  font-weight: 500;
+  min-width: 2.5rem;
+}
+
+.listen-slider-group input[type="range"] {
+  width: 80px;
+  accent-color: var(--action-color);
+  cursor: pointer;
+}
+
+.listen-slider-group output {
+  min-width: 2rem;
+  text-align: center;
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: var(--body-color);
+}
+
+.listen-adjust {
+  background: var(--border-color);
+  border: none;
+  color: var(--body-color);
+  width: 24px;
+  height: 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.listen-adjust:hover {
+  background: #4a4a4a;
+}
+
+.light-theme .listen-controls {
+  background: #f0f0f0;
+  border-color: #ddd;
+}
+
+.light-theme .listen-btn {
+  background: #e8e8e8;
+  border-color: #ddd;
+}
+
+.light-theme .listen-btn:hover {
+  background: #ddd;
+}
+
+.light-theme .listen-adjust {
+  background: #ddd;
+}
+
+.light-theme .listen-adjust:hover {
+  background: #ccc;
 }
 
 /* Smooth scroll */

@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSocialShare()
   initProjectFilter()
   initHamburgerMenu()
+  initListenButton()
 })
 
 // ── Search ──────────────────────────────────────────────────
@@ -464,5 +465,125 @@ function initSocialShare() {
         })
       }
     })
+  })
+}
+
+// ── Listen Button (Text-to-Speech) ─────────────────────────
+function initListenButton() {
+  const btn = document.querySelector(".listen-btn")
+  const content = document.querySelector(".post-content")
+  if (!btn || !content) return
+
+  const iconPlay = btn.querySelector(".listen-icon-play")
+  const iconPause = btn.querySelector(".listen-icon-pause")
+  const iconStop = btn.querySelector(".listen-icon-stop")
+  const label = btn.querySelector(".listen-label")
+
+  let utterance = null
+  let state = "idle" // idle | speaking | paused
+  let voices = []
+
+  function loadVoices() {
+    voices = speechSynthesis.getVoices()
+  }
+  loadVoices()
+  speechSynthesis.addEventListener("voiceschanged", loadVoices)
+
+  // Wire up sliders and +/- buttons
+  document.querySelectorAll(".listen-slider-group input[type=range]").forEach(slider => {
+    const output = document.getElementById(slider.id + "-value")
+    slider.addEventListener("input", () => {
+      output.textContent = slider.id === "listen-rate" ? slider.value + "x" : slider.value
+    })
+  })
+
+  document.querySelectorAll(".listen-adjust").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const slider = document.getElementById(btn.dataset.target)
+      if (!slider) return
+      const step = parseFloat(btn.dataset.step)
+      const next = Math.max(parseFloat(slider.min), Math.min(parseFloat(slider.max), parseFloat(slider.value) + step))
+      slider.value = next
+      slider.dispatchEvent(new Event("input"))
+    })
+  })
+
+  function extractText() {
+    const clone = content.cloneNode(true)
+    clone.querySelectorAll("pre, code, script, style, .heading-anchor, .code-copy-btn").forEach(el => el.remove())
+    return clone.textContent.replace(/\s+/g, " ").trim()
+  }
+
+  function setIdle() {
+    state = "idle"
+    iconPlay.style.display = ""
+    iconPause.style.display = "none"
+    iconStop.style.display = "none"
+    label.textContent = "Listen"
+    btn.classList.remove("listening", "paused")
+  }
+
+  function setSpeaking() {
+    state = "speaking"
+    iconPlay.style.display = "none"
+    iconPause.style.display = ""
+    iconStop.style.display = ""
+    label.textContent = "Pause"
+    btn.classList.add("listening")
+    btn.classList.remove("paused")
+  }
+
+  function setPaused() {
+    state = "paused"
+    iconPlay.style.display = ""
+    iconPause.style.display = "none"
+    iconStop.style.display = ""
+    label.textContent = "Resume"
+    btn.classList.add("paused")
+    btn.classList.remove("listening")
+  }
+
+  iconStop.addEventListener("click", (e) => {
+    e.stopPropagation()
+    speechSynthesis.cancel()
+    setIdle()
+  })
+
+  btn.addEventListener("click", (e) => {
+    if (e.target.closest(".listen-icon-stop")) return
+
+    if (state === "speaking") {
+      speechSynthesis.pause()
+      setPaused()
+      return
+    }
+
+    if (state === "paused") {
+      speechSynthesis.resume()
+      setSpeaking()
+      return
+    }
+
+    // state === "idle"
+    const text = extractText()
+    if (!text) return
+
+    const rateInput = document.getElementById("listen-rate")
+    const pitchInput = document.getElementById("listen-pitch")
+
+    utterance = new SpeechSynthesisUtterance(text)
+    utterance.rate = rateInput ? parseFloat(rateInput.value) : 1.0
+    utterance.pitch = pitchInput ? parseFloat(pitchInput.value) : 1.0
+    const preferred = ["Samantha", "Daniel", "Karen", "Fred"]
+    const voice = preferred.reduce((found, name) =>
+      found || voices.find(v => v.name === name), null)
+    if (voice) utterance.voice = voice
+
+    utterance.onend = () => setIdle()
+    utterance.onerror = () => setIdle()
+
+    speechSynthesis.cancel()
+    speechSynthesis.speak(utterance)
+    setSpeaking()
   })
 }
