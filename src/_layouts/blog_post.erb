@@ -7,6 +7,31 @@ layout: blog_default
     <h1 class="post-title p-name" itemprop="name headline"><%= data.title %></h1>
   </header>
 
+  <div class="listen-controls">
+    <button class="listen-btn" aria-label="Listen to this article">
+      <svg class="listen-icon-play" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 22v-20l18 10-18 10z"/></svg>
+      <svg class="listen-icon-pause" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="5" y="3" width="4" height="18"/><rect x="15" y="3" width="4" height="18"/></svg>
+      <svg class="listen-icon-stop" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display:none"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>
+      <span class="listen-label">Listen</span>
+    </button>
+    <div class="listen-sliders">
+      <label class="listen-slider-group">
+        <span class="listen-slider-label">Speed</span>
+        <button class="listen-adjust" data-target="listen-rate" data-step="-0.25" aria-label="Decrease speed">&minus;</button>
+        <output id="listen-rate-value">1.0x</output>
+        <button class="listen-adjust" data-target="listen-rate" data-step="0.25" aria-label="Increase speed">+</button>
+        <input type="range" id="listen-rate" min="0.5" max="2" step="0.25" value="1" aria-label="Speech rate">
+      </label>
+      <label class="listen-slider-group">
+        <span class="listen-slider-label">Pitch</span>
+        <button class="listen-adjust" data-target="listen-pitch" data-step="-0.25" aria-label="Decrease pitch">&minus;</button>
+        <output id="listen-pitch-value">1.0</output>
+        <button class="listen-adjust" data-target="listen-pitch" data-step="0.25" aria-label="Increase pitch">+</button>
+        <input type="range" id="listen-pitch" min="0.5" max="2" step="0.25" value="1" aria-label="Speech pitch">
+      </label>
+    </div>
+  </div>
+
   <div class="post-content e-content" itemprop="articleBody">
     <%= yield %>
   </div>

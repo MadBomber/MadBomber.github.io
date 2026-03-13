@@ -21,6 +21,11 @@ Bridgetown.configure do |config|
 
   permalink "/blog/:categories/:title/"
 
+  init :"bridgetown-sitemap"
+  init :"bridgetown-feed"
+  init :"bridgetown-related-posts"
+  init :"bridgetown-quick-search"
+
   pagination do
     enabled true
   end

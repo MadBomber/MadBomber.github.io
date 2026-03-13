@@ -1,4 +1,5 @@
 import "$styles/index.css"
+import lunr from "lunr"
 
 // Import all JavaScript & CSS files from src/_components
 import components from "$components/**/*.{js,jsx,js.rb,css}"
@@ -19,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initSocialShare()
   initProjectFilter()
   initHamburgerMenu()
+  initListenButton()
 })
 
 // ── Search ──────────────────────────────────────────────────
@@ -30,7 +32,8 @@ function initSearch() {
 
   if (!toggle || !searchBar || !searchInput) return
 
-  let searchIndex = null
+  let lunrIndex = null
+  let searchDocs = null
 
   toggle.addEventListener("click", (e) => {
     e.preventDefault()
@@ -60,18 +63,40 @@ function initSearch() {
   })
 
   searchInput.addEventListener("focus", async () => {
-    if (searchIndex) return
+    if (lunrIndex) return
     try {
-      const response = await fetch(searchInput.dataset.searchUrl)
-      searchIndex = await response.json()
+      const [searchResp, projectsResp] = await Promise.all([
+        fetch("/bridgetown_quick_search/index.json"),
+        fetch("/projects.json")
+      ])
+      const docs = await searchResp.json()
+      const projects = await projectsResp.json()
+      const allDocs = docs.concat(projects)
+      searchDocs = Object.fromEntries(allDocs.map(doc => [doc.id, doc]))
+      lunrIndex = lunr(function () {
+        this.ref("id")
+        this.field("title", { boost: 10 })
+        this.field("categories", { boost: 5 })
+        this.field("tags", { boost: 5 })
+        this.field("content")
+        allDocs.forEach(doc => {
+          this.add({
+            id: doc.id,
+            title: doc.title || "",
+            categories: doc.categories || "",
+            tags: doc.tags || "",
+            content: doc.content || ""
+          })
+        })
+      })
     } catch (e) {
       console.warn("Could not load search index:", e)
     }
   })
 
   searchInput.addEventListener("input", () => {
-    if (!searchIndex) return
-    const query = searchInput.value.toLowerCase().trim()
+    if (!lunrIndex || !searchDocs) return
+    const query = searchInput.value.trim()
     const container = searchBar.querySelector(".search-results")
     if (!container) return
 
@@ -80,17 +105,51 @@ function initSearch() {
       return
     }
 
-    const results = searchIndex.filter(item =>
-      item.title.toLowerCase().includes(query) ||
-      item.categories.toLowerCase().includes(query) ||
-      item.tags.toLowerCase().includes(query) ||
-      (item.content && item.content.toLowerCase().includes(query))
-    )
+    let results
+    try {
+      results = lunrIndex.search(query)
+      if (results.length === 0) {
+        results = lunrIndex.search(query + "*")
+      }
+    } catch (e) {
+      try {
+        results = lunrIndex.search(query + "*")
+      } catch (e2) {
+        results = []
+      }
+    }
 
-    container.innerHTML = results.slice(0, 10).map(r =>
-      `<div class="post-card"><h3><a href="${r.url}">${r.title}</a></h3>
-       <div class="post-card-meta"><time>${r.date}</time></div></div>`
-    ).join("")
+    const skipUrls = ["/blog/feed.xml", "/blog/search.json", "/sitemap.xml", "", "/projects/", "/blog/posts/"]
+    const filtered = results.filter(result => {
+      const doc = searchDocs[result.ref]
+      if (!doc) return false
+      if (doc.collection === "projects") return true
+      if (skipUrls.includes(doc.url)) return false
+      return true
+    })
+
+    filtered.sort((a, b) => {
+      const aIsProject = searchDocs[a.ref]?.collection === "projects" ? 0 : 1
+      const bIsProject = searchDocs[b.ref]?.collection === "projects" ? 0 : 1
+      return aIsProject - bIsProject
+    })
+
+    container.innerHTML = filtered.slice(0, 10).map(result => {
+      const doc = searchDocs[result.ref]
+      if (!doc) return ""
+      if (doc.collection === "projects") {
+        return `<a class="post-card search-result-project" href="${doc.docs_url || doc.url}" target="_blank" rel="noopener noreferrer">
+          <h3>${doc.title}</h3>
+          <div class="post-card-meta">Project${doc.gem_name ? ` · ${doc.gem_name} v${doc.gem_version}` : ""}</div>
+          <p class="search-snippet">${doc.content || ""}</p>
+        </a>`
+      }
+      const snippet = doc.content ? doc.content.substring(0, 150) + "..." : ""
+      return `<a class="post-card" href="${doc.url}" target="_blank" rel="noopener noreferrer">
+       <h3>${doc.title}</h3>
+       <div class="post-card-meta">${doc.categories || ""}</div>
+       <p class="search-snippet">${snippet}</p></a>`
+    }).join("")
   })
 }
 
@@ -320,7 +379,9 @@ function initKeyboardNav() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", (e) => {
-      const target = document.querySelector(anchor.getAttribute("href"))
+      const href = anchor.getAttribute("href")
+      if (href === "#") return
+      const target = document.querySelector(href)
       if (!target) return
       e.preventDefault()
       target.scrollIntoView({ behavior: "smooth", block: "start" })
@@ -404,5 +465,125 @@ function initSocialShare() {
         })
       }
     })
+  })
+}
+
+// ── Listen Button (Text-to-Speech) ─────────────────────────
+function initListenButton() {
+  const btn = document.querySelector(".listen-btn")
+  const content = document.querySelector(".post-content")
+  if (!btn || !content) return
+
+  const iconPlay = btn.querySelector(".listen-icon-play")
+  const iconPause = btn.querySelector(".listen-icon-pause")
+  const iconStop = btn.querySelector(".listen-icon-stop")
+  const label = btn.querySelector(".listen-label")
+
+  let utterance = null
+  let state = "idle" // idle | speaking | paused
+  let voices = []
+
+  function loadVoices() {
+    voices = speechSynthesis.getVoices()
+  }
+  loadVoices()
+  speechSynthesis.addEventListener("voiceschanged", loadVoices)
+
+  // Wire up sliders and +/- buttons
+  document.querySelectorAll(".listen-slider-group input[type=range]").forEach(slider => {
+    const output = document.getElementById(slider.id + "-value")
+    slider.addEventListener("input", () => {
+      output.textContent = slider.id === "listen-rate" ? slider.value + "x" : slider.value
+    })
+  })
+
+  document.querySelectorAll(".listen-adjust").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const slider = document.getElementById(btn.dataset.target)
+      if (!slider) return
+      const step = parseFloat(btn.dataset.step)
+      const next = Math.max(parseFloat(slider.min), Math.min(parseFloat(slider.max), parseFloat(slider.value) + step))
+      slider.value = next
+      slider.dispatchEvent(new Event("input"))
+    })
+  })
+
+  function extractText() {
+    const clone = content.cloneNode(true)
+    clone.querySelectorAll("pre, code, script, style, .heading-anchor, .code-copy-btn").forEach(el => el.remove())
+    return clone.textContent.replace(/\s+/g, " ").trim()
+  }
+
+  function setIdle() {
+    state = "idle"
+    iconPlay.style.display = ""
+    iconPause.style.display = "none"
+    iconStop.style.display = "none"
+    label.textContent = "Listen"
+    btn.classList.remove("listening", "paused")
+  }
+
+  function setSpeaking() {
+    state = "speaking"
+    iconPlay.style.display = "none"
+    iconPause.style.display = ""
+    iconStop.style.display = ""
+    label.textContent = "Pause"
+    btn.classList.add("listening")
+    btn.classList.remove("paused")
+  }
+
+  function setPaused() {
+    state = "paused"
+    iconPlay.style.display = ""
+    iconPause.style.display = "none"
+    iconStop.style.display = ""
+    label.textContent = "Resume"
+    btn.classList.add("paused")
+    btn.classList.remove("listening")
+  }
+
+  iconStop.addEventListener("click", (e) => {
+    e.stopPropagation()
+    speechSynthesis.cancel()
+    setIdle()
+  })
+
+  btn.addEventListener("click", (e) => {
+    if (e.target.closest(".listen-icon-stop")) return
+
+    if (state === "speaking") {
+      speechSynthesis.pause()
+      setPaused()
+      return
+    }
+
+    if (state === "paused") {
+      speechSynthesis.resume()
+      setSpeaking()
+      return
+    }
+
+    // state === "idle"
+    const text = extractText()
+    if (!text) return
+
+    const rateInput = document.getElementById("listen-rate")
+    const pitchInput = document.getElementById("listen-pitch")
+
+    utterance = new SpeechSynthesisUtterance(text)
+    utterance.rate = rateInput ? parseFloat(rateInput.value) : 1.0
+    utterance.pitch = pitchInput ? parseFloat(pitchInput.value) : 1.0
+    const preferred = ["Samantha", "Daniel", "Karen", "Fred"]
+    const voice = preferred.reduce((found, name) =>
+      found || voices.find(v => v.name === name), null)
+    if (voice) utterance.voice = voice
+
+    utterance.onend = () => setIdle()
+    utterance.onerror = () => setIdle()
+
+    speechSynthesis.cancel()
+    speechSynthesis.speak(utterance)
+    setSpeaking()
   })
 }

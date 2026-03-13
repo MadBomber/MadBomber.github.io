@@ -33,6 +33,11 @@ jobs:
       - name: Build frontend assets
         run: npm run esbuild
 
+      - name: Fetch project data
+        run: ruby scripts/find_mkdocs_repos.rb
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build site
         run: bin/bridgetown build --url "${{ steps.pages.outputs.origin }}"
         env:
