@@ -658,6 +658,43 @@ a.post-card:hover {
   color: #4ecdc4;
 }
 
+/* RefTagger Tooltip */
+.rtTooltip {
+  background: rgba(15, 15, 15, 0.97) !important;
+  border: 1px solid var(--border-color) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.85) !important;
+  padding: 1.25rem 1.5rem !important;
+  max-width: 480px !important;
+  z-index: 9999 !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+.rtTooltipInner {
+  background: transparent !important;
+}
+
+.rtTooltipRef {
+  color: var(--link-color) !important;
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 0.75rem !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  padding-bottom: 0.5rem !important;
+}
+
+.rtTooltipText {
+  color: var(--body-color) !important;
+  font-size: inherit !important;
+  line-height: 1.7 !important;
+}
+
+.rtTooltipLogo {
+  margin-top: 0.75rem !important;
+  opacity: 0.6 !important;
+  font-size: 0.8rem !important;
+}
+
 /* Responsive */
 @media (max-width: 600px) {
   .site-nav ul {
