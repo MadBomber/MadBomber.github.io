@@ -4,18 +4,18 @@
   description: A powerful CLI tool for dynamic prompt management and AI interaction
   github_url: https://github.com/MadBomber/aia
   docs_url: https://madbomber.github.io/aia/
-  downloads: 33349
+  downloads: 35321
   gem_name: aia
   gem_version: 1.0.0
   gem_version_date: '2026-02-22T23:04:53.803Z'
   language: Ruby
-  updated_at: '2026-03-02T17:41:08Z'
+  updated_at: '2026-04-03T11:18:27Z'
 - name: DebugMe Documentation
   repo_name: debug_me
   description: A time-tested Ruby debugging gem for elegant variable inspection
   github_url: https://github.com/MadBomber/debug_me
   docs_url: https://madbomber.github.io/debug_me/
-  downloads: 26673
+  downloads: 27047
   gem_name: debug_me
   gem_version: 1.1.3
   gem_version_date: '2025-11-21T04:49:21.334Z'
@@ -27,30 +27,30 @@
     strategy development
   github_url: https://github.com/MadBomber/sqa
   docs_url: https://madbomber.github.io/sqa/
-  downloads: 15590
+  downloads: 16023
   gem_name: sqa
   gem_version: 0.0.38
   gem_version_date: '2025-11-24T23:16:31.690Z'
   language: Ruby
-  updated_at: '2026-01-16T20:47:49Z'
+  updated_at: '2026-04-04T10:38:07Z'
 - name: PM (PromptManager)
   repo_name: prompt_manager
   description: Parse YAML metadata from markdown prompts with shell expansion and
     ERB rendering
   github_url: https://github.com/MadBomber/prompt_manager
   docs_url: https://madbomber.github.io/prompt_manager/
-  downloads: 10697
+  downloads: 11132
   gem_name: prompt_manager
   gem_version: 1.0.2
   gem_version_date: '2026-02-10T01:19:19.375Z'
   language: Ruby
-  updated_at: '2026-02-28T07:28:22Z'
+  updated_at: '2026-03-14T10:02:27Z'
 - name: SmartMessage Documentation
   repo_name: smart_message
   description: Intelligent messages that know what to do and how to do it
   github_url: https://github.com/MadBomber/smart_message
   docs_url: https://madbomber.github.io/smart_message/
-  downloads: 3815
+  downloads: 4055
   gem_name: smart_message
   gem_version: 0.0.17
   gem_version_date: '2025-09-12T03:25:47.495Z'
@@ -62,7 +62,7 @@
     and RAG-based retrieval
   github_url: https://github.com/MadBomber/htm
   docs_url: https://madbomber.github.io/htm/
-  downloads: 3621
+  downloads: 3888
   gem_name: htm
   gem_version: 0.0.31
   gem_version_date: '2026-01-24T07:46:59.794Z'
@@ -74,19 +74,19 @@
     operations, code evaluation, and more
   github_url: https://github.com/MadBomber/shared_tools
   docs_url: https://madbomber.github.io/shared_tools/
-  downloads: 2617
+  downloads: 3094
   gem_name: shared_tools
-  gem_version: 0.3.1
-  gem_version_date: '2025-12-17T23:02:18.655Z'
+  gem_version: 0.4.2
+  gem_version_date: '2026-03-27T19:47:35.087Z'
   language: Ruby
-  updated_at: '2026-02-28T22:23:25Z'
+  updated_at: '2026-03-27T19:39:34Z'
 - name: SimpleFlow Documentation
   repo_name: simple_flow
   description: A lightweight, modular Ruby framework for building composable data
     processing pipelines with concurrent execution
   github_url: https://github.com/MadBomber/simple_flow
   docs_url: https://madbomber.github.io/simple_flow/
-  downloads: 2283
+  downloads: 2379
   gem_name: simple_flow
   gem_version: 0.3.0
   gem_version_date: '2026-01-16T19:52:08.304Z'
@@ -98,7 +98,7 @@
     auto-configuration from YAML
   github_url: https://github.com/MadBomber/myway_config
   docs_url: https://madbomber.github.io/myway_config/
-  downloads: 2194
+  downloads: 2268
   gem_name: myway_config
   gem_version: 0.1.2
   gem_version_date: '2026-01-24T07:18:22.161Z'
@@ -110,76 +110,76 @@
     for building distributed AI agents
   github_url: https://github.com/MadBomber/agent99
   docs_url: https://madbomber.github.io/agent99/
-  downloads: 2078
+  downloads: 2248
   gem_name: agent99
   gem_version: 0.0.5
   gem_version_date: '2025-09-03T22:15:24.441Z'
   language: Ruby
-  updated_at: '2025-10-02T13:51:42Z'
-- name: RobotLab
-  repo_name: robot_lab
-  description: Multi-robot LLM workflow orchestration for Ruby
-  github_url: https://github.com/MadBomber/robot_lab
-  docs_url: https://madbomber.github.io/robot_lab/
-  downloads: 1159
-  gem_name: robot_lab
-  gem_version: 0.0.9
-  gem_version_date: '2026-03-02T23:44:22.798Z'
-  language: Ruby
-  updated_at: '2026-03-02T23:43:55Z'
+  updated_at: '2026-04-04T09:11:48Z'
 - name: Geodetic
   repo_name: geodetic
   description: Ruby gem for geodetic coordinate system conversions
   github_url: https://github.com/MadBomber/geodetic
   docs_url: https://madbomber.github.io/geodetic/
-  downloads: 1080
+  downloads: 1795
   gem_name: geodetic
-  gem_version: 0.8.0
-  gem_version_date: '2026-03-11T16:46:19.759Z'
+  gem_version: 0.8.5
+  gem_version_date: '2026-03-14T22:56:03.139Z'
   language: Ruby
-  updated_at: '2026-03-11T16:45:55Z'
+  updated_at: '2026-03-14T23:29:31Z'
+- name: RobotLab
+  repo_name: robot_lab
+  description: Multi-robot LLM workflow orchestration for Ruby
+  github_url: https://github.com/MadBomber/robot_lab
+  docs_url: https://madbomber.github.io/robot_lab/
+  downloads: 1339
+  gem_name: robot_lab
+  gem_version: 0.0.9
+  gem_version_date: '2026-03-02T23:44:22.798Z'
+  language: Ruby
+  updated_at: '2026-03-22T04:40:30Z'
+- name: SQA TAI - Technical Analysis Indicators
+  repo_name: sqa-tai
+  description: Ruby wrapper for TA-Lib - 200+ Technical Analysis Indicators
+  github_url: https://github.com/MadBomber/sqa-tai
+  docs_url: https://madbomber.github.io/sqa-tai/
+  downloads: 1190
+  gem_name: sqa-tai
+  gem_version: 0.1.2
+  gem_version_date: '2025-11-13T19:10:38.489Z'
+  language: Ruby
+  updated_at: '2025-11-28T06:26:12Z'
 - name: TrakFlow Documentation
   repo_name: trak_flow
   description: A distributed task tracking system for AI agents with DAG-based workflow
     engine
   github_url: https://github.com/MadBomber/trak_flow
   docs_url: https://madbomber.github.io/trak_flow/
-  downloads: 1073
+  downloads: 1107
   gem_name: trak_flow
   gem_version: 0.1.3
   gem_version_date: '2026-01-03T16:56:21.503Z'
   language: Ruby
   updated_at: '2026-02-28T02:36:55Z'
-- name: SQA TAI - Technical Analysis Indicators
-  repo_name: sqa-tai
-  description: Ruby wrapper for TA-Lib - 200+ Technical Analysis Indicators
-  github_url: https://github.com/MadBomber/sqa-tai
-  docs_url: https://madbomber.github.io/sqa-tai/
-  downloads: 1059
-  gem_name: sqa-tai
-  gem_version: 0.1.2
-  gem_version_date: '2025-11-13T19:10:38.489Z'
-  language: Ruby
-  updated_at: '2025-11-28T06:26:12Z'
 - name: KBS - Knowledge-Based Systems for Ruby
   repo_name: kbs
   description: A Ruby implementation of the RETE algorithm for production rule systems
     with persistent blackboard memory
   github_url: https://github.com/MadBomber/kbs
   docs_url: https://madbomber.github.io/kbs/
-  downloads: 840
+  downloads: 1019
   gem_name: kbs
   gem_version: 0.2.1
   gem_version_date: '2026-02-27T22:45:13.144Z'
   language: Ruby
-  updated_at: '2026-02-27T22:38:31Z'
+  updated_at: '2026-03-18T23:23:24Z'
 - name: FactDb
   repo_name: fact_db
   description: Temporal fact tracking with entity resolution and audit trails for
     Ruby
   github_url: https://github.com/MadBomber/fact_db
   docs_url: https://madbomber.github.io/fact_db/
-  downloads: 705
+  downloads: 801
   gem_name: fact_db
   gem_version: 0.1.0
   gem_version_date: '2026-02-07T16:59:19.147Z'
@@ -191,69 +191,91 @@
     agent communication
   github_url: https://github.com/MadBomber/simple_acp
   docs_url: https://madbomber.github.io/simple_acp/
-  downloads: 605
+  downloads: 646
   gem_name: simple_acp
   gem_version: 0.0.1
   gem_version_date: '2026-01-21T22:57:46.917Z'
   language: Ruby
   updated_at: '2026-01-28T04:46:36Z'
-- name: WritersRoom
-  repo_name: writers_room
-  description: AI-powered creative writing tool for Ruby
-  github_url: https://github.com/MadBomber/writers_room
-  docs_url: https://madbomber.github.io/writers_room/
-  downloads: 403
-  gem_name: writers_room
-  gem_version: 0.0.3
-  gem_version_date: '2026-02-20T19:34:53.248Z'
-  language: Ruby
-  updated_at: '2026-02-28T02:43:29Z'
 - name: Zvec Ruby
   repo_name: zvec-ruby
   description: Ruby bindings for Alibaba's zvec C++ vector database
   github_url: https://github.com/MadBomber/zvec-ruby
   docs_url: https://madbomber.github.io/zvec-ruby/
-  downloads: 400
+  downloads: 598
   gem_name: zvec-ruby
   gem_version: 0.2.0
   gem_version_date: '2026-03-11T09:55:44.992Z'
   language: C++
-  updated_at: '2026-02-27T21:48:36Z'
+  updated_at: '2026-03-17T06:21:19Z'
+- name: WritersRoom
+  repo_name: writers_room
+  description: AI-powered creative writing tool for Ruby
+  github_url: https://github.com/MadBomber/writers_room
+  docs_url: https://madbomber.github.io/writers_room/
+  downloads: 454
+  gem_name: writers_room
+  gem_version: 0.0.3
+  gem_version_date: '2026-02-20T19:34:53.248Z'
+  language: Ruby
+  updated_at: '2026-02-28T02:43:29Z'
 - name: BunnyFarm Documentation
   repo_name: bunny_farm
   description: Comprehensive documentation for the BunnyFarm Ruby gem - Lightweight
     AMQP/JSON background job manager for RabbitMQ
   github_url: https://github.com/MadBomber/bunny_farm
   docs_url: https://madbomber.github.io/bunny_farm/
-  downloads: 334
+  downloads: 363
   gem_name: bunny_farm
   gem_version: 0.1.2
   gem_version_date: '2025-09-02T17:59:14.779Z'
   language: Ruby
   updated_at: '2025-09-02T17:58:36Z'
-- name: SelfAgency
-  repo_name: self_agency
-  description: LLM-powered runtime method generation for Ruby classes
-  github_url: https://github.com/MadBomber/self_agency
-  docs_url: https://madbomber.github.io/self_agency/
-  downloads: 171
-  gem_name: self_agency
-  gem_version: 0.0.1
-  gem_version_date: '2026-02-01T06:22:09.440Z'
-  language: Ruby
-  updated_at: '2026-03-08T21:15:00Z'
 - name: TypedBus
   repo_name: typed_bus
   description: Async pub/sub message bus with typed channels, ACK-based delivery,
     and dead letter queues for Ruby
   github_url: https://github.com/MadBomber/typed_bus
   docs_url: https://madbomber.github.io/typed_bus/
-  downloads: 168
+  downloads: 211
   gem_name: typed_bus
   gem_version: 0.0.1
   gem_version_date: '2026-02-07T07:37:14.270Z'
   language: Ruby
   updated_at: '2026-02-11T13:45:25Z'
+- name: SelfAgency
+  repo_name: self_agency
+  description: LLM-powered runtime method generation for Ruby classes
+  github_url: https://github.com/MadBomber/self_agency
+  docs_url: https://madbomber.github.io/self_agency/
+  downloads: 209
+  gem_name: self_agency
+  gem_version: 0.0.1
+  gem_version_date: '2026-02-01T06:22:09.440Z'
+  language: Ruby
+  updated_at: '2026-03-08T21:15:00Z'
+- name: aias
+  repo_name: aias
+  description: Schedule AIA prompts as cron jobs via frontmatter
+  github_url: https://github.com/MadBomber/aias
+  docs_url: https://madbomber.github.io/aias/
+  downloads: 166
+  gem_name: aias
+  gem_version: 0.1.0
+  gem_version_date: '2026-03-25T04:33:12.687Z'
+  language: Ruby
+  updated_at: '2026-03-25T04:32:19Z'
+- name: RactorQueue
+  repo_name: ractor_queue
+  description: Lock-free, bounded, MPMC queue for Ruby Ractors
+  github_url: https://github.com/MadBomber/ractor_queue
+  docs_url: https://madbomber.github.io/ractor_queue/
+  downloads: 78
+  gem_name: ractor_queue
+  gem_version: 0.1.0
+  gem_version_date: '2026-04-11T05:04:48.030Z'
+  language: Ruby
+  updated_at: '2026-04-11T04:48:06Z'
 - name: Ragdoll Documentation
   repo_name: ragdoll-docs
   description: Unified text-based RAG system with PostgreSQL + pgvector, converting
@@ -266,18 +288,6 @@
   gem_version_date:
   language: Shell
   updated_at: '2026-02-28T07:29:02Z'
-- name: SQA CLI - Simple Qualitative Analysis
-  repo_name: sqa-cli
-  description: A command-line interface for financial market analysis, backtesting,
-    and portfolio optimization
-  github_url: https://github.com/MadBomber/sqa-cli
-  docs_url: https://madbomber.github.io/sqa-cli/
-  downloads: 0
-  gem_name:
-  gem_version:
-  gem_version_date:
-  language: Ruby
-  updated_at: '2025-11-13T00:45:35Z'
 - name: MyNews - RSS Feed Pipeline
   repo_name: my_news
   description: Ruby gem that transforms 200+ RSS feeds into themed bulletins published
@@ -290,3 +300,15 @@
   gem_version_date:
   language: Ruby
   updated_at: '2026-01-29T00:01:46Z'
+- name: SQA CLI - Simple Qualitative Analysis
+  repo_name: sqa-cli
+  description: A command-line interface for financial market analysis, backtesting,
+    and portfolio optimization
+  github_url: https://github.com/MadBomber/sqa-cli
+  docs_url: https://madbomber.github.io/sqa-cli/
+  downloads: 0
+  gem_name:
+  gem_version:
+  gem_version_date:
+  language: Ruby
+  updated_at: '2025-11-13T00:45:35Z'
