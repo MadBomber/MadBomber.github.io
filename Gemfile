@@ -25,7 +25,8 @@ git_source(:codeberg) { "https://codeberg.org/#{_1}.git" }
 
 # If you need to upgrade/switch Bridgetown versions, change the line below
 # and then run `bundle update bridgetown`
-gem "bridgetown", "~> 2.1.0"
+gem "bridgetown"
+gem "samovar", "= 2.4.1"  # 2.4.2+ drops Mapping::Model DSL that bridgetown-core 2.2.x monkey-patches
 
 # Uncomment to add file-based dynamic routing to your project:
 # gem "bridgetown-routes", "~> 2.1.0"
