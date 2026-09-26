@@ -1,0 +1,84 @@
+<svg width="900" height="690" viewBox="0 0 900 690" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#9ca3af"/>
+    </marker>
+    <style>
+      .title { font: bold 20px Arial, sans-serif; fill: #f9fafb; }
+      .code  { font: 16px Menlo, Consolas, monospace; fill: #fbbf24; }
+      .label { font: bold 15px Menlo, Consolas, monospace; fill: #f9fafb; }
+      .note  { font: 15px Arial, sans-serif; fill: #d1d5db; }
+      .stage { font: 13px Arial, sans-serif; fill: #9ca3af; }
+      .seq   { fill: #1d4ed8; stroke: #60a5fa; stroke-width: 2; }
+      .par   { fill: #047857; stroke: #34d399; stroke-width: 2; }
+      .tgt   { fill: #6d28d9; stroke: #a78bfa; stroke-width: 2; }
+      .group { fill: none; stroke: #34d399; stroke-width: 1.5; stroke-dasharray: 6 4; }
+      .edge  { stroke: #9ca3af; stroke-width: 2; fill: none; }
+    </style>
+  </defs>
+
+  <!-- Sequential -->
+  <text x="30" y="40" class="title">Sequential</text>
+  <text x="30" y="66" class="code">depends_on :a, :b, :c</text>
+  <rect x="30"  y="85" width="110" height="36" rx="6" class="seq"/>
+  <text x="85"  y="108" class="label" text-anchor="middle">:a</text>
+  <rect x="190" y="85" width="110" height="36" rx="6" class="seq"/>
+  <text x="245" y="108" class="label" text-anchor="middle">:b</text>
+  <rect x="350" y="85" width="110" height="36" rx="6" class="seq"/>
+  <text x="405" y="108" class="label" text-anchor="middle">:c</text>
+  <rect x="510" y="85" width="110" height="36" rx="6" class="tgt"/>
+  <text x="565" y="108" class="label" text-anchor="middle">task</text>
+  <line x1="140" y1="103" x2="188" y2="103" class="edge" marker-end="url(#arrow)"/>
+  <line x1="300" y1="103" x2="348" y2="103" class="edge" marker-end="url(#arrow)"/>
+  <line x1="460" y1="103" x2="508" y2="103" class="edge" marker-end="url(#arrow)"/>
+  <text x="660" y="100" class="note">bare symbols run</text>
+  <text x="660" y="120" class="note">one after another</text>
+
+  <!-- Parallel -->
+  <text x="30" y="190" class="title">Parallel</text>
+  <text x="30" y="216" class="code">depends_on [:a, :b, :c]</text>
+  <rect x="20" y="232" width="130" height="152" rx="8" class="group"/>
+  <rect x="30" y="242" width="110" height="36" rx="6" class="par"/>
+  <text x="85" y="265" class="label" text-anchor="middle">:a</text>
+  <rect x="30" y="290" width="110" height="36" rx="6" class="par"/>
+  <text x="85" y="313" class="label" text-anchor="middle">:b</text>
+  <rect x="30" y="338" width="110" height="36" rx="6" class="par"/>
+  <text x="85" y="361" class="label" text-anchor="middle">:c</text>
+  <rect x="250" y="290" width="110" height="36" rx="6" class="tgt"/>
+  <text x="305" y="313" class="label" text-anchor="middle">task</text>
+  <line x1="140" y1="260" x2="248" y2="302" class="edge" marker-end="url(#arrow)"/>
+  <line x1="140" y1="308" x2="248" y2="308" class="edge" marker-end="url(#arrow)"/>
+  <line x1="140" y1="356" x2="248" y2="314" class="edge" marker-end="url(#arrow)"/>
+  <text x="420" y="300" class="note">an array is one stage: each member runs in its own</text>
+  <text x="420" y="320" class="note">thread, and the next stage waits for all of them</text>
+
+  <!-- Mixed -->
+  <text x="30" y="440" class="title">Mixed</text>
+  <text x="30" y="466" class="code">depends_on :setup, [:lint, :build, :typecheck], :test</text>
+  <rect x="30" y="535" width="110" height="36" rx="6" class="seq"/>
+  <text x="85" y="558" class="label" text-anchor="middle">setup</text>
+  <rect x="180" y="482" width="130" height="142" rx="8" class="group"/>
+  <rect x="190" y="490" width="110" height="36" rx="6" class="par"/>
+  <text x="245" y="513" class="label" text-anchor="middle">lint</text>
+  <rect x="190" y="535" width="110" height="36" rx="6" class="par"/>
+  <text x="245" y="558" class="label" text-anchor="middle">build</text>
+  <rect x="190" y="580" width="110" height="36" rx="6" class="par"/>
+  <text x="245" y="603" class="label" text-anchor="middle">typecheck</text>
+  <rect x="370" y="535" width="110" height="36" rx="6" class="seq"/>
+  <text x="425" y="558" class="label" text-anchor="middle">test</text>
+  <rect x="530" y="535" width="110" height="36" rx="6" class="tgt"/>
+  <text x="585" y="558" class="label" text-anchor="middle">ci</text>
+  <line x1="140" y1="553" x2="188" y2="510" class="edge" marker-end="url(#arrow)"/>
+  <line x1="140" y1="553" x2="188" y2="553" class="edge" marker-end="url(#arrow)"/>
+  <line x1="140" y1="553" x2="188" y2="596" class="edge" marker-end="url(#arrow)"/>
+  <line x1="300" y1="508" x2="368" y2="549" class="edge" marker-end="url(#arrow)"/>
+  <line x1="300" y1="553" x2="368" y2="553" class="edge" marker-end="url(#arrow)"/>
+  <line x1="300" y1="598" x2="368" y2="557" class="edge" marker-end="url(#arrow)"/>
+  <line x1="480" y1="553" x2="528" y2="553" class="edge" marker-end="url(#arrow)"/>
+  <text x="85"  y="656" class="stage" text-anchor="middle">stage 1</text>
+  <text x="245" y="656" class="stage" text-anchor="middle">stage 2</text>
+  <text x="425" y="656" class="stage" text-anchor="middle">stage 3</text>
+  <text x="585" y="656" class="stage" text-anchor="middle">the task</text>
+  <text x="680" y="545" class="note">each argument</text>
+  <text x="680" y="565" class="note">is one stage</text>
+</svg>
