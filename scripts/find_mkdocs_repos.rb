@@ -47,9 +47,9 @@ end
 # Get all non-forked repos
 repos_json, status = Open3.capture2('gh', 'repo', 'list', 'MadBomber',
   '--limit', '200',
-  '--json', 'name,isFork,description,url,homepageUrl,stargazerCount,updatedAt,primaryLanguage')
+  '--json', 'name,isFork,isPrivate,description,url,homepageUrl,stargazerCount,updatedAt,primaryLanguage')
 
-repos = JSON.parse(repos_json).reject { |r| r['isFork'] }
+repos = JSON.parse(repos_json).reject { |r| r['isFork'] || r['isPrivate'] }
 
 puts "Found #{repos.size} non-forked repos"
 puts
